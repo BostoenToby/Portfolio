@@ -3,13 +3,26 @@ import Link from "../node_modules/next/link";
 import Logo from '../assets/2x/Asset2@2x.png';
 import { Sun } from 'lucide-react' 
 import { useEffect, useState } from "react";
+import { getStorage, setStorage } from "../components/localstorage";
 
 export default function contact () {
-    const [dark, setDark] = useState<boolean>(false)
+    const [dark, setDark] = useState<boolean>()
 
     useEffect(() => {
-        console.log("color has changed", dark)
-    }, [dark])
+        console.log(getStorage("dark"))
+        if(getStorage("dark") != undefined || getStorage("dark") != null){
+            setDark(getStorage("dark") === 'true' ? true : false)
+            console.log(getStorage("dark") === 'true' ? true : false)
+        } else {
+            setDark(false)
+            setStorage("dark", false)
+        }
+    }, [])
+
+    const changeTheme = () => {
+        setDark(!dark)
+        setStorage("dark", !dark)
+    }
 
     return(
         <div className={`h-screen ${dark? 'bg-black': 'bg-white'}`}>
@@ -21,8 +34,8 @@ export default function contact () {
                     <Link href="/about"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>About</p></Link>
                 </div>
                 <div className="flex space-x-4 items-center">
-                    <Sun className={`cursor-pointer ${dark? 'text-lightgray' : 'text-darkgray'}`} onClick={async() => {dark == false ? setDark(true) : setDark(false)}}/>
-                    <button className={`${dark? 'bg-darkgray text-white' : 'bg-lightgray text-black'} p-2 rounded`}>Contact</button>
+                    <Sun className={`cursor-pointer ${dark? 'text-lightgray' : 'text-darkgray'}`} onClick={async() => {changeTheme()}}/>
+                    <Link href="/contact"><button className={`${dark? 'bg-darkgray text-white' : 'bg-lightgray text-black'} p-2 rounded`}>Contact</button></Link>
                 </div>
             </header>
             <main className="font-montserrat flex items-center justify-center space-x-20 mt-16 h-[70vh] mx-8">
