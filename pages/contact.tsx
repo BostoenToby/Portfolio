@@ -40,7 +40,7 @@ export default function contact () {
             </header>
             <main className="font-montserrat flex items-center justify-center space-x-20 mt-16 h-[70vh] mx-8">
                 <section>
-                    <h1 className="text-green text-6xl mb-4">Don't hessitate, go ahead<br />and contact me</h1>
+                    <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-6xl mb-4`}>Don't hessitate, go ahead<br />and contact me</h1>
                     <p className={`text-base ${dark? 'text-white' : 'text-black'}`}>Send me directly <span className="font-bold text-green cursor-pointer">here</span> or use the form on the right</p>
                 </section>
                 <section className="flex flex-col space-y-4">
