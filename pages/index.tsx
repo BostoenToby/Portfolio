@@ -5,6 +5,8 @@ import { getStorage, setStorage } from '../components/localstorage'
 import { Sun } from 'lucide-react'
 import personalImage from '../public/personalImage.jpg'
 import spotify from '../public/spotify.png';
+import personalimage from '../public/personalimage.jpg';
+import headerlogo from '../public/logo.png';
 
 export default function Home() {
   const [dark, setDark] = useState<boolean>()
@@ -38,7 +40,7 @@ export default function Home() {
   return (
     <div className={`h-screen ${dark? 'bg-black': 'bg-white'}`}>
       <header className="flex justify-between mx-8 pt-6 font-montserrat">
-          <Image src="" />
+          <h1 className={`${dark? 'text-white border-white' : 'text-black border-black'} border-b-2 font-montserrat h-7`}>Bostoen Toby</h1>
           <div className="flex space-x-12">
               <Link href="/"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Home</p></Link>
               <Link href="/projects"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Projects</p></Link>
@@ -49,27 +51,23 @@ export default function Home() {
               <Link href="/contact"><button className={`${dark? 'bg-darkgray text-white' : 'bg-lightgray text-black'} p-2 rounded`}>Contact</button></Link>
           </div>
       </header>
-      <main className="font-montserrat mt-16 mx-8 space-y-4²">
+      <main className="font-montserrat my-16 mx-8 space-y-4²">
         <section className="grid grid-cols-2">
-          <div className="p-4 text-center">
-            <h1 className={`${dark? 'text-white' : 'text-black'} text-5xl pb-4`}>Toby Bostoen</h1>
-            <h3 className={`${dark? 'text-white' : 'text-black'} text-3xl leading-normal`}>Frontend Developer<br />Based in Belgium</h3>
+          <div className="px-4 text-center py-40 flex flex-col">
+            <div className="items-start mb-16">
+              <h1 className={`${dark? 'text-white' : 'text-black'} text-5xl pb-4`}>Toby Bostoen</h1>
+              <h3 className={`${dark? 'text-white' : 'text-black'} text-3xl leading-normal`}>Frontend Developer<br />Based in Belgium</h3>
+            </div>
+            <div className={`${dark? 'text-white' : 'text-black'} flex justify-between text-xl mx-12 items-end`}>
+              {languages.map((lang) => {
+                return(
+                  <p className={`${dark? 'text-white' : 'text-black'} text-xl`}>{lang}</p>
+                )
+              })}
+            </div>
           </div>
-          <div className="flex items-center">
-            <a className="flex items-center" target="_blank" href="https://open.spotify.com/playlist/7tvzXRYLK4GDMAetKXz5BJ?si=ce83aa71e5544ed8">
-              <h3 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl pr-4`}>Enjoy my playlist</h3>
-              <Image src={spotify} width={50} height={50}/>
-            </a>
-          </div>
-        </section>
-        <section className={`${dark? 'bg-darkgray' : 'bg-lightgray'} rounded p-4 mx-auto mt-32`}>
-          <h3 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl pb-4`}>Experience</h3>
-          <div className={`${dark? 'text-white' : 'text-black'} flex justify-between text-xl mx-12`}>
-            {languages.map((lang) => {
-              return(
-                <p className={`${dark? 'text-white' : 'text-black'} text-xl`}>{lang}</p>
-              )
-            })}
+          <div className="flex items-center relative h-30">
+            <Image src={personalimage} layout="fill" placeholder="blur" objectFit="cover" className="rounded" />
           </div>
         </section>
       </main>

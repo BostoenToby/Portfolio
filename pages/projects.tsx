@@ -4,7 +4,6 @@ import { getStorage, setStorage } from "../components/localstorage"
 import ProjectBlock from "../components/projectBlock"
 import Image from "../node_modules/next/image"
 import Link from "../node_modules/next/link"
-import computer from '../public/computer.webp';
 import * as projectList from '../components/projects'
 
 
@@ -35,18 +34,18 @@ export default function projects () {
     {
         title: "Vital Cities Beweegscan",
         explanation: "My second big project was in my second year of my bachelor course MCT. We worked on a project for Vital Cities where they wanted an online tool for people where they could compare their city with others on certain aspects. The main goal of Vital Cities was to make people aware that the car doesn't need to be your first option to get around. They support people to go on walks, go cycling, use public transportation, ... Some examples of the aspects that you can compare on the online tool are: accessibility of playgrounds, enough options for public transport, ...",
-        image: "vitalcities.jpg"
+        image: "vitalcities.png"
     },
     {
         title: "Portfolio",
         explanation: "In the summer of 2022 I've started this portfolio as a place to store my projects and to inspire others to expand their knowledge. My goal is to make a fun website that isn't boring to look at with a cool color palette and without the boring parts. In the future I'll maybe consider to change to another framework to make sure the user gets the best experience.",
-        image: "personalProgrammer.jpg"
+        image: "personalprogrammer.jpg"
     }]
 
     return(
         <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
             <header className="flex justify-between mx-8 pt-6 font-montserrat">
-                <Image src="" />
+                <h1 className={`${dark? 'text-white border-white' : 'text-black border-black'} border-b-2 font-montserrat h-7`}>Bostoen Toby</h1>
                 <div className="flex space-x-12">
                     <Link href="/"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Home</p></Link>
                     <Link href="/projects"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Projects</p></Link>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getStorage, setStorage } from "../components/localstorage";
 import { Sun } from "lucide-react";
 import business from '../public/business.jpeg';
-import personalImage from '../public/personalImage.jpg';
+import personalprogrammer from '../public/computergray.jpg';
 import computer from '../public/computergray.jpg';
 
 
@@ -30,7 +30,7 @@ export default function about () {
     return(
         <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
             <header className="flex justify-between mx-8 pt-6 font-montserrat">
-                <Image src="" />
+                <h1 className={`${dark? 'text-white border-white' : 'text-black border-black'} border-b-2 font-montserrat h-7`}>Bostoen Toby</h1>
                 <div className="flex space-x-12">
                     <Link href="/"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Home</p></Link>
                     <Link href="/projects"><p className={`text-base ${dark? 'text-white' : 'text-black'} cursor-pointer`}>Projects</p></Link>
@@ -44,11 +44,11 @@ export default function about () {
             <main className="font-montserrat mx-8">
                 <section className="h-screen flex flex-col items-center justify-center">
                     <div className="flex mb-16 space-x-16">
-                        <div className="space-y-10 pr-12 w-3/5">
+                        <div className="space-y-10 pr-12">
                             <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-6xl`}>Some words about me, if you're interested at least</h1>
                             <p className={`${dark? 'text-white' : 'text-black'} text-lg`}>Toby Bostoen is a passionate <span className="font-bold">frontend developer</span> based in Belgium. He is a final year student <span className="font-bold">MCT at Howest Kortrijk</span></p>
                         </div>
-                        <Image src={personalImage3} className="rounded shadow-lg"/>
+                        <picture className="relative w-full h-30"><Image src={personalprogrammer} className="rounded" layout="fill" placeholder="blur" objectFit="cover" /></picture>
                     </div>
                 </section>
                 <section className="h-screen flex flex-col items-center justify-center">
