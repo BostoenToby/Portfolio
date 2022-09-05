@@ -1,63 +1,53 @@
-import Link from '../node_modules/next/link'
-import Image from '../node_modules/next/image'
-import { useEffect, useState } from 'react'
-import { getStorage, setStorage } from '../components/localstorage'
 import { Sun, Menu, X } from "lucide-react"
-import personalImage from '../public/personalImage.jpg'
-import spotify from '../public/spotify.png';
-import personalimage from '../public/personalimage.jpg';
-import headerlogo from '../public/logo.png';
+import { useEffect, useState } from "react"
+import { getStorage, setStorage } from "../components/localstorage"
+import Image from "../node_modules/next/image"
+import Link from "../node_modules/next/link"
+import { useRouter } from "../node_modules/next/router"
 
-export default function Home() {
-  const [dark, setDark] = useState<boolean>()
-  const [fullSize, setFullSize] = useState<boolean>(true)
-  const [showSideNav, setShowSideNav] = useState<boolean>(false)
+export default function detailProject() {
+    const router = useRouter()
+    const { slug } = router.query
+    const [dark, setDark] = useState<boolean>()
+    const [fullSize, setFullSize] = useState<boolean>(true)
+    const [showSideNav, setShowSideNav] = useState<boolean>(false)
 
-  useEffect(() => {
-      if(getStorage("dark") != undefined || getStorage("dark") != null){
-          setDark(getStorage("dark") === 'true' ? true : false)
-          console.log(getStorage("dark") === 'true' ? true : false)
-      } else {
-          setDark(false)
-          setStorage("dark", false)
-      }
+    useEffect(() => {
+        console.log({slug})
+        if(getStorage("dark") != undefined || getStorage("dark") != null){
+            setDark(getStorage("dark") === 'true' ? true : false)
+            console.log(getStorage("dark") === 'true' ? true : false)
+        } else {
+            setDark(false)
+            setStorage("dark", false)
+        }
 
-      if(typeof window !== "undefined"){
-          const updateSize = () => {
-              if(window.innerWidth >= 768){
-                  setFullSize(true)
-              } else {
-                  setFullSize(false)
-              }
-          }
-          updateSize()
+        if(typeof window !== "undefined"){
+            const updateSize = () => {
+                if(window.innerWidth >= 768){
+                    setFullSize(true)
+                } else {
+                    setFullSize(false)
+                }
+            }
+            updateSize()
 
-          window.addEventListener("resize", updateSize)
-      }
-  }, [])
+            window.addEventListener("resize", updateSize)
+        }
+    }, [])
 
-  const changeTheme = () => {
-      setDark(!dark)
-      setStorage("dark", !dark)
-  }
+    const changeTheme = () => {
+        setDark(!dark)
+        setStorage("dark", !dark)
+    }
 
-  const handleSideBar = () => {
-      setShowSideNav(!showSideNav)
-  }
+    const handleSideBar = () => {
+        setShowSideNav(!showSideNav)
+    }
 
-  const languages = [
-    "javascript",
-    "python",
-    "C#",
-    "React",
-    "Gatsby",
-    "TailwindCSS",
-    "NextJS"
-  ]
-
-  return (
-    <div className={`h-screen ${dark? 'bg-black': 'bg-white'}`}>
-      {fullSize? (
+    return(
+        <div className={`h-screen ${dark? 'bg-black': 'bg-white'}`}>
+            {fullSize? (
                 <header className="flex justify-between items-center mx-8 pt-6 font-montserrat">
                     <h1 className={`${dark? 'text-white border-white' : 'text-black border-black'} border-b-2 font-montserrat h-7 sm:text-sm`}>Bostoen Toby</h1>
                     <div className="flex space-x-12 sm:text-sm">
@@ -89,26 +79,22 @@ export default function Home() {
                     </header>
                 </div>
             )}
-      <main className="font-montserrat my-16 mx-8 space-y-4²">
-        <section className="grid grid-cols-2">
-          <div className="px-4 text-center py-40 flex flex-col">
-            <div className="items-start mb-16">
-              <h1 className={`${dark? 'text-white' : 'text-black'} text-5xl pb-4`}>Toby Bostoen</h1>
-              <h3 className={`${dark? 'text-white' : 'text-black'} text-3xl leading-normal`}>Frontend Developer<br />Based in Belgium</h3>
-            </div>
-            <div className={`${dark? 'text-white' : 'text-black'} flex justify-between text-xl mx-12 items-end`}>
-              {languages.map((lang, index) => {
-                return(
-                  <p key={index} className={`${dark? 'text-white' : 'text-black'} text-xl`}>{lang}</p>
-                )
-              })}
-            </div>
-          </div>
-          <div className="flex items-center relative h-30">
-            <Image src={personalimage} layout="fill" placeholder="blur" objectFit="cover" className="rounded" />
-          </div>
-        </section>
-      </main>
-    </div>
-  )
+            <main className="font-montserrat mt-16 mx-8 pb-8">
+                <div className="flex justify-between">
+                    <div>
+                        <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>"title"</h1>
+                        <div className="flex space-x-4">
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded w-max`}>"2020-2021 datum"</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded w-max`}>"frontend"</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded w-max`}>"data storage"</h4>
+                        </div>
+                    </div>
+                    <div className="relative w-30 h-30">
+                        <Image src={""} layout="fill" placeholder="blur" objectFit="cover" className="rounded"/>
+                    </div>
+                </div>
+                {/* <p>{explanation}</p> */}
+            </main>
+        </div>
+    )
 }
