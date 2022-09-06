@@ -21,7 +21,7 @@ export default function Home() {
       <Header setDark={setDark} dark={dark}/>
       <main className="font-montserrat my-auto pt-4 mx-8 space-y-4">
         <section className="sm:grid sm:grid-rows-2 md:grid-cols-2 md:grid-rows-none">
-          <div className="md:col-start-2 md:px-4 text-center py-40 flex flex-col my-auto">
+          <div className="md:col-start-1 md:px-4 text-center py-40 flex flex-col my-auto">
             <div className="mb-16">
               <h1 className={`${dark? 'text-white' : 'text-black'} text-3xl md:text-5xl pb-4`}>Toby Bostoen</h1>
               <h3 className={`${dark? 'text-white' : 'text-black'} text-xl md:text-3xl leading-normal`}>Frontend Developer<br />Based in Belgium</h3>
@@ -34,7 +34,7 @@ export default function Home() {
               })}
             </div>
           </div>
-          <div className="hidden md:block md:my-auto md:relative row-start-1 md:col-start-1">
+          <div className="hidden md:block md:my-auto md:relative row-start-1 md:col-start-2">
             <Image src={personalimage} layout="responsive" placeholder="blur" className="rounded" />
           </div>
         </section>

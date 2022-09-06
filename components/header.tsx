@@ -72,6 +72,7 @@ export default (params) => {
                                         <Link href="/"><p className={`text-base ${params.dark? 'text-white' : 'text-black'} text-base cursor-pointer`}>Home</p></Link>
                                         <Link href="/projects"><p className={`text-base ${params.dark? 'text-white' : 'text-black'} text-base cursor-pointer`}>Projects</p></Link>
                                         <Link href="/about"><p className={`text-base ${params.dark? 'text-white' : 'text-black'} text-base cursor-pointer`}>About</p></Link>
+                                        <Link href="/contact"><p className={`${params.dark? 'text-white' : 'text-black'} text-base cursor-pointer`}>Contact</p></Link>
                                     </section>
                                 </div>
                             </div>
