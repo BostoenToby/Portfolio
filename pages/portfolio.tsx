@@ -29,7 +29,7 @@ export default function Portfolio () {
                     <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-2xl md:text-4xl mb-4`}>Explanation</h1>
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:grid-rows-none lg:gap-4">
                         <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20">
-                            <Image src={personalImage} layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
+                            <Image src={personalImage} alt="an image of the creator of the site" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                         </div>
                         <div className="flex flex-col space-y-4 lg:col-start-1 lg:col-end-3">
                             <p className={`${dark? 'text-white' : 'text-black'}`}>In the summer of 2022 I've started this portfolio as a place to store my projects and to inspire others to expand their knowledge. My goal is to make a fun website that isn't boring to look at with a cool color palette and without the boring parts. In the future I'll maybe consider to change to another framework to make sure the user gets the best experience.</p>

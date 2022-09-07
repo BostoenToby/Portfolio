@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Link from "../node_modules/next/link"
 import { getStorage, setStorage } from "./localstorage"
 
-export default (params) => {
+const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
     const [showSideNav, setShowSideNav] = useState<boolean>(false)
 
@@ -84,3 +84,5 @@ export default (params) => {
         </div>
     )
 }
+
+export default Header
