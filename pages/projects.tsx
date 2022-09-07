@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ProjectBlock from "../components/projectBlock"
+import ProjectBlock from "../components/projectblock"
 import Header from "../components/header"
 
 
