@@ -22,7 +22,7 @@ export default function Portfolio () {
                         </div>
                     </div>
                     <div className="mt-8 md:mt-0 block md:col-start-3 relative w-80 h-auto">
-                        <Image src={personalImageFull} layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
+                        <Image src={personalImageFull} alt="an image of the creator of the site" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                     </div>
                 </div>
                 <section>

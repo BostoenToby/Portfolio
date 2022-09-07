@@ -22,14 +22,14 @@ export default function Beweegscan () {
                         </div>
                     </div>
                     <div className="mt-8 md:mt-0 block md:col-start-3 relative w-30 h-96">
-                        <Image src={vitalcities} layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
+                        <Image src={vitalcities} alt="image of vital cities" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                     </div>
                 </div>
                 <section>
                     <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-2xl md:text-4xl mb-4`}>Explanation</h1>
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:grid-rows-none lg:gap-4">
                         <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20">
-                            <Image src={netlify} layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
+                            <Image src={netlify} alt="image of netlify cms" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                         </div>
                         <div className="flex flex-col space-y-4 lg:col-start-1 lg:col-end-3">
                             <p className={`${dark? 'text-white' : 'text-black'}`}>My second big project was in my second year of my bachelor course MCT. We worked on a project for Vital Cities where they wanted an online tool for people where they could compare their city with others on certain aspects. The main goal of Vital Cities was to make people aware that the car doesn't need to be your first option to get around. They support people to go on walks, go cycling, use public transportation, ... Some examples of the aspects that you can compare on the online tool are: accessibility of playgrounds, enough options for public transport, ...</p>

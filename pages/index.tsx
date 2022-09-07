@@ -35,7 +35,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block md:my-auto md:relative row-start-1 md:col-start-2">
-            <Image src={personalimage} layout="responsive" placeholder="blur" className="rounded" />
+            <Image src={personalimage} alt="an image of the creator of the site" layout="responsive" placeholder="blur" className="rounded" />
           </div>
         </section>
       </main>
