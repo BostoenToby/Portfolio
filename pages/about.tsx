@@ -12,7 +12,7 @@ export default function about () {
         <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
             <Header setDark={setDark} dark={dark}/>
             <main className="font-montserrat mx-8 pt-8 md:pt-2">
-                <section className="flex flex-col items-center md:justify-center">
+                <section className="flex flex-col md:justify-center">
                     <div className="flex flex-col md:flex-row mb-16 space-x-16 md:items-center">
                         <div className="space-y-4 md:space-y-10 md:pr-12">
                             <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl md:text-6xl`}>Some words about me, if you're interested at least</h1>
