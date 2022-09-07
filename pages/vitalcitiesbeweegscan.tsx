@@ -4,7 +4,7 @@ import Image from "../node_modules/next/image"
 import vitalcities from '../public/vitalcities.png';
 import netlify from '../public/netlifycms.jpg'
 
-export default function beweegscan () {
+export default function Beweegscan () {
     const [dark, setDark] = useState<boolean>()
 
     return(

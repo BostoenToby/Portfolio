@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../components/header";
 
-export default function contact () {
+export default function Contact () {
     const [dark, setDark] = useState<boolean>()
 
     return(

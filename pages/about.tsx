@@ -5,7 +5,7 @@ import personalprogrammer from '../public/computergray.jpg';
 import computer from '../public/computergray.jpg';
 import Header from "../components/header";
 
-export default function about () {
+export default function About () {
     const [dark, setDark] = useState<boolean>()
 
     return(

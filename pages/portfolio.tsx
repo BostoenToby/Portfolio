@@ -4,7 +4,7 @@ import Image from "../node_modules/next/image"
 import personalImageFull from '../public/personalimagefull.jpeg';
 import personalImage from '../public/personalprogrammer.jpg';
 
-export default function portfolio () {
+export default function Portfolio () {
     const [dark, setDark] = useState<boolean>()
 
     return(

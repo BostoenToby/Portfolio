@@ -4,7 +4,7 @@ import Image from "../node_modules/next/image"
 import cocktailmakerimage from '../public/cocktailmaker.jpg';
 import fritzing from '../public/fritzing.jpg'
 
-export default function cocktailmaker () {
+export default function Cocktailmaker () {
     const [dark, setDark] = useState<boolean>()
 
     return(

@@ -3,7 +3,7 @@ import ProjectBlock from "../components/projectBlock"
 import Header from "../components/header"
 
 
-export default function projects () {
+export default function Projects () {
     const [dark, setDark] = useState<boolean>()
 
     const projects = [{
