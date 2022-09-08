@@ -17,6 +17,8 @@ exports.handler = async (event: any, context: any, callback: any) => {
     }
 
     try{
+        console.log(mail_to_send.from)
+        console.log(mail_to_send.subject)
         await sgMail.send(mail_to_send).then(() => console.log("Mail has been send"))
 
         return {
