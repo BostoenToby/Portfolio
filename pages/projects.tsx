@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Header from "../components/header"
-import ProjectBlock from "../components/projectblock"
-
+import Projectblock from "../components/projectblock"
 
 export default function Projects () {
     const [dark, setDark] = useState<boolean>()
@@ -32,7 +31,7 @@ export default function Projects () {
                 <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>Projects</h1>               
                 {projects.map((project, index) => {
                     return(
-                        <ProjectBlock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
+                        <Projectblock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
                     )
                 })}
             </main>
