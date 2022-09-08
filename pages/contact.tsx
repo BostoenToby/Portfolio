@@ -104,7 +104,7 @@ export default function Contact () {
             <main className="font-montserrat flex items-center justify-center space-x-20 mt-4 md:mt-16 h-[70vh] mx-8 flex-col lg:flex-row">
                 <section className="mb-8 mt-32 md:mt-0 lg:-mb-0">
                     <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl md:text-5xl mb-4`}>Don't hessitate, go ahead<br />and contact me</h1>
-                    <p className={`text-base ${dark? 'text-white' : 'text-black'}`}>Send me directly <span className="font-bold text-green cursor-pointer">here</span> or use the form on the right</p>
+                    <p className={`text-base ${dark? 'text-white' : 'text-black'}`}>Send me directly <span className="font-bold text-green cursor-pointer"><a href="mailto:toby.botport@gmail.com">here</a></span> or use the form on the right</p>
                 </section>
                 <section className="flex flex-col space-y-4 !-ml-0 lg:!ml-4 md:w-1/2">
                     <div className="flex space-x-4">
