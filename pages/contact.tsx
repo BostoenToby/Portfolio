@@ -137,7 +137,7 @@ export default function Contact () {
                                 return { ...u }
                             })
                         } className={`p-4 resize-none rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                    <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={async() => await sendgridMail()}>Send message</button>
+                    <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={async() => await checkInfo()}>Send message</button>
                 </section>
             </main>
         </div>
