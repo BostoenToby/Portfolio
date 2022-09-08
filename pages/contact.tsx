@@ -8,7 +8,11 @@ export default function Contact () {
     async function sendgridMail() {
         try {
             console.log("trying to send mail")
-          return await axios.post('/.netlify/functions/sendmail')
+          return await axios.post('/.netlify/functions/sendmail/sendmail',{
+            message: "This is a test from contact section",
+            senderEmail: "This is a test from contact section",
+            senderName: "This is a test from contact section"
+          })
         } catch (error) {
           console.log(error)
           console.log("it didn't work")
