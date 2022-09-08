@@ -1,5 +1,3 @@
 [build]
-    publish = ".next"
-
-[functions]
-    directory = "functions/"
+  publish = "dist"
+  functions = './functions/'
