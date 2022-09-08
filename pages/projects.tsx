@@ -33,7 +33,7 @@ export default function Projects () {
                 {projects.map((project, index) => {
                     return(
                         // <Projectblock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
-                        <section className="flex flex-col md:grid md:grid-cols-3 space-x-4 mb-16">
+                        <section key={index} className="flex flex-col md:grid md:grid-cols-3 space-x-4 mb-16">
                             <div className="md:col-start-1 md:col-end-3 flex flex-col space-y-10">
                                 <h3 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl`}>{project.title}</h3>
                                 <p className={`${dark? 'text-white' : 'text-black'} text-lg line-clamp-5`}>{project.explanation}</p>
