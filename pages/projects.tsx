@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Projectblock from '../components/projectblock'
 import Header from "../components/header"
+import ProjectBlock from "../components/projectblock"
 
 
 export default function Projects () {
@@ -32,7 +32,7 @@ export default function Projects () {
                 <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>Projects</h1>               
                 {projects.map((project, index) => {
                     return(
-                        <Projectblock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
+                        <ProjectBlock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
                     )
                 })}
             </main>
