@@ -4,7 +4,7 @@ import Link from "../node_modules/next/link";
 import computer from '../public/computer.webp';
 import personal from '../public/personalImage.jpeg';
 
-const ProjectBlock = ({dark, image, title, explanation, altImage} : {dark: boolean, image: any, title: string, explanation: string, altImage: string}) => {
+const Projectblock = ({dark, image, title, explanation, altImage} : {dark: boolean, image: any, title: string, explanation: string, altImage: string}) => {
     return(
         <section className="flex flex-col md:grid md:grid-cols-3 space-x-4 mb-16">
             <div className="md:col-start-1 md:col-end-3 flex flex-col space-y-10">
@@ -20,4 +20,4 @@ const ProjectBlock = ({dark, image, title, explanation, altImage} : {dark: boole
     )
 }
 
-export default ProjectBlock
+export default Projectblock
