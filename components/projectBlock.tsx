@@ -1,8 +1,5 @@
-import { useEffect } from "react";
 import Image from "../node_modules/next/image";
 import Link from "../node_modules/next/link";
-import computer from '../public/computer.webp';
-import personal from '../public/personalImage.jpeg';
 
 const Projectblock = ({dark, image, title, explanation, altImage} : {dark: boolean, image: any, title: string, explanation: string, altImage: string}) => {
     return(
