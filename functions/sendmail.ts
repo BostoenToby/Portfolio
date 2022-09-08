@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail')
 
 exports.handler = async (event: any, context: any, callback: any) => {
-
+    console.log("second test of trying to send mail")
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
     const mail_to_send = {

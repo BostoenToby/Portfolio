@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Header from "../components/header";
-import axios from "../node_modules/axios/index";
+import axios from "../node_modules/axios";
 
 export default function Contact () {
     const [dark, setDark] = useState<boolean>()
 
     async function sendgridMail() {
         try {
+            console.log("trying to send mail")
           return await axios.post('/.netlify/functions/sendmail')
         } catch (error) {
           console.log(error)
@@ -29,7 +30,7 @@ export default function Contact () {
                     </div>
                     <input type="text" placeholder="Email address" className={`p-2 md:p-4 rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
                     <textarea name="message" id="message" cols={10} rows={7} placeholder="Message" className={`p-4 resize-none rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                    <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={() => sendgridMail()}>Send message</button>
+                    <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={async() => await sendgridMail()}>Send message</button>
                 </section>
             </main>
         </div>
