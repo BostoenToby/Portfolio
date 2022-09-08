@@ -26,7 +26,7 @@ const Header = (params) => {
                 }
             }
             updateSize()
-
+ 
             window.addEventListener("resize", updateSize)
         }
     }, [])
