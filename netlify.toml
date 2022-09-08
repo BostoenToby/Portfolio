@@ -2,4 +2,4 @@
     publish = ".next"
 
 [functions]
-    directory = "functions/"
+    directory = "./functions/"
