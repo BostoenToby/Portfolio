@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Header from "../components/header"
-import Projectblock from "../components/projectblock"
+import Image from "../node_modules/next/image"
+import Link from "../node_modules/next/link"
 
 export default function Projects () {
     const [dark, setDark] = useState<boolean>()
@@ -31,7 +32,18 @@ export default function Projects () {
                 <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>Projects</h1>               
                 {projects.map((project, index) => {
                     return(
-                        <Projectblock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
+                        // <Projectblock dark={dark} key={index} image={require(`../public/${project.image}`)} title={project.title} explanation={project.explanation} altImage={project.alt}/>
+                        <section className="flex flex-col md:grid md:grid-cols-3 space-x-4 mb-16">
+                            <div className="md:col-start-1 md:col-end-3 flex flex-col space-y-10">
+                                <h3 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl`}>{project.title}</h3>
+                                <p className={`${dark? 'text-white' : 'text-black'} text-lg line-clamp-5`}>{project.explanation}</p>
+                                {/* <div><Link href={{pathname:`/detailProject/${title}`, query: { photo: image }}}><button className={`${dark? 'text-lightblue' : 'text-green'} text-lg underline text-start`}>Read more</button></Link></div> */}
+                                <div><Link href={`${project.title.replace(/\s/g, '').toLowerCase()}`}><button className={`${dark? 'text-lightblue' : 'text-green'} text-lg underline text-start`}>Read more</button></Link></div>
+                            </div>
+                            <div className="hidden md:block md:col-start-3 md:col-end-4 relative w-30 h-30">
+                                <Image src={project.image} alt={project.alt} layout="fill" placeholder="blur" objectFit="cover" className="rounded"/>
+                            </div>
+                        </section>
                     )
                 })}
             </main>
