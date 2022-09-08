@@ -8,13 +8,20 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link rel="stylesheet" href="https://use.typekit.net/smj0alx.css"/>
           <link
           href="https://fonts.googleapis.com/css2?family=Montserrat&display=optional"
           rel="stylesheet"
           />
+          <meta name="description" content="This is the portfolio of Toby Bostoen"/>
+          <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png"/>
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+          <link rel="manifest" href="/site.webmanifest"/>
+          <meta name="msapplication-TileColor" content="#da532c"/>
+          <meta name="theme-color" content="#ffffff"/>
         </Head>
         <body>
           <Main />
