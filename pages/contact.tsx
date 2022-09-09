@@ -108,20 +108,30 @@ export default function Contact () {
                 </section>
                 <section className="flex flex-col space-y-4 !-ml-0 lg:!ml-4 md:w-1/2">
                     <div className="flex space-x-4">
-                        <input type="text" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
-                            setInfo((u: MailInfo) => {
-                                //@ts-ignore
-                                u.name = e.target.value
-                                return { ...u }
-                            })
-                        } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                        <input type="text" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
-                            setInfo((u: MailInfo) => {
-                                //@ts-ignore
-                                u.subject = e.target.value
-                                return { ...u }
-                            })
-                        } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
+                        <div className="flex flex-col space-y-4 w-2/5">
+                          <input type="text" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                              setInfo((u: MailInfo) => {
+                                  //@ts-ignore
+                                  u.name = e.target.value
+                                  return { ...u }
+                              })
+                          } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
+                          {errors.nameError ? (
+                            <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.nameError}</p>
+                          ) : null}
+                        </div>
+                        <div className="flex flex-col space-y-4 w-3/5">
+                          <input type="text" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                              setInfo((u: MailInfo) => {
+                                  //@ts-ignore
+                                  u.subject = e.target.value
+                                  return { ...u }
+                              })
+                          } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
+                          {errors.subjectError ? (
+                            <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.subjectError}</p>
+                          ) : null}
+                        </div>
                     </div>
                     <input type="text" placeholder="Email address" onInput={(e: React.FormEvent<HTMLInputElement>) =>
                             setInfo((u: MailInfo) => {
@@ -130,6 +140,9 @@ export default function Contact () {
                                 return { ...u }
                             })
                         } className={`p-2 md:p-4 rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
+                    {errors.mailError? (
+                      <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.mailError}</p>
+                    ): null}
                     <textarea name="message" id="message" cols={10} rows={7} placeholder="Message" onChange={(e: any) =>
                             setInfo((u: MailInfo) => {
                                 //@ts-ignore
@@ -137,6 +150,9 @@ export default function Contact () {
                                 return { ...u }
                             })
                         } className={`p-4 resize-none rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
+                    {errors.messageError? (
+                      <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.messageError}</p>
+                    ) : null}
                     <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={async() => await checkInfo()}>Send message</button>
                 </section>
             </main>
