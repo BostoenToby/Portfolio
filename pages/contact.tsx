@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/header";
 import FormError from "../interfaces/formError";
 import MailInfo from "../interfaces/mailInfo";
+//@ts-ignore
 import axios from "../node_modules/axios";
 
 export default function Contact () {
@@ -99,63 +100,69 @@ export default function Contact () {
     }
 
     return(
-        <div className={`h-screen ${dark? 'bg-black': 'bg-white'}`}>
-            <Header setDark={setDark} dark={dark}/>
-            <main className="font-montserrat flex items-center justify-center space-x-20 mt-4 md:mt-16 h-[70vh] mx-8 flex-col lg:flex-row">
-                <section className="mb-8 mt-32 md:mt-0 lg:-mb-0">
-                    <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl md:text-5xl mb-4`}>Don't hessitate, go ahead<br />and contact me</h1>
-                    <p className={`text-base ${dark? 'text-white' : 'text-black'}`}>Send me directly <span className="font-bold text-green cursor-pointer"><a href="mailto:toby.botport@gmail.com">here</a></span> or use the form on the right</p>
-                </section>
-                <section className="flex flex-col space-y-4 !-ml-0 lg:!ml-4 md:w-1/2">
-                    <div className="flex space-x-4">
-                        <div className="flex flex-col space-y-4 w-2/5">
-                          <input type="text" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
-                              setInfo((u: MailInfo) => {
-                                  //@ts-ignore
-                                  u.name = e.target.value
-                                  return { ...u }
-                              })
-                          } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                          {errors.nameError ? (
-                            <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.nameError}</p>
-                          ) : null}
-                        </div>
-                        <div className="flex flex-col space-y-4 w-3/5">
-                          <input type="text" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
-                              setInfo((u: MailInfo) => {
-                                  //@ts-ignore
-                                  u.subject = e.target.value
-                                  return { ...u }
-                              })
-                          } className={`p-2 md:p-4 w-5/6 md:w-full rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                          {errors.subjectError ? (
-                            <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.subjectError}</p>
-                          ) : null}
-                        </div>
-                    </div>
-                    <input type="text" placeholder="Email address" onInput={(e: React.FormEvent<HTMLInputElement>) =>
-                            setInfo((u: MailInfo) => {
-                                //@ts-ignore
-                                u.mail = e.target.value
-                                return { ...u }
-                            })
-                        } className={`p-2 md:p-4 rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                    {errors.mailError? (
-                      <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.mailError}</p>
-                    ): null}
-                    <textarea name="message" id="message" cols={10} rows={7} placeholder="Message" onChange={(e: any) =>
-                            setInfo((u: MailInfo) => {
-                                //@ts-ignore
-                                u.message = e.target.value
-                                return { ...u }
-                            })
-                        } className={`p-4 resize-none rounded ${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} `} />
-                    {errors.messageError? (
-                      <p className={`${dark? 'text-darkred' : 'text-lightred'}`}>{errors.messageError}</p>
-                    ) : null}
-                    <button className={`px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded`} onClick={async() => await checkInfo()}>Send message</button>
-                </section>
-            </main>
+        <div className={`${dark? 'dark' : null}`}>
+          <div className="portrait:h-screen landscape:h-full landscape:pb-60 dark:bg-black bg-white">
+              <Header setDark={setDark} dark={dark}/>
+              <main className="font-montserrat flex items-center justify-center space-x-20 mt-4 md:mt-16 h-[70vh] mx-8 flex-col lg:flex-row landscape:mt-60">
+                  <section className="mb-8 mt-32 md:mt-0 lg:-mb-0">
+                      <h1 className="dark:text-lightblue text-green text-3xl md:text-5xl mb-4">Don't hessitate, go ahead<br />and contact me</h1>
+                      <p className="text-base dark:text-white text-black">Send me directly <span className="font-bold text-green cursor-pointer"><a href="mailto:toby.botport@gmail.com">here</a></span> or use the form on the right</p>
+                  </section>
+                  <section className="flex flex-col space-y-4 w-full !-ml-0 lg:!ml-4 md:w-1/2">
+                      <div className="flex justify-between">
+                          <div className="flex flex-col space-y-2 w-2/5">
+                            <input type="text" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                                setInfo((u: MailInfo) => {
+                                    //@ts-ignore
+                                    u.name = e.target.value
+                                    return { ...u }
+                                })
+                            } className="p-2 md:p-4 md:w-full rounded dark:text-white dark:bg-darkgray text-black bg-lightgray outline-none border border-transparent focus:border-lightgrayx hover:border-lightgrayx dark:focus:border-darkgrayx dark:hover:border-darkgrayx"/>
+                            {errors.nameError ? (
+                              <p className="dark:text-darkred text-lightred">{errors.nameError}</p>
+                            ) : null}
+                          </div>
+                          <div className="flex flex-col space-y-2 w-1/2">
+                            <input type="text" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                                setInfo((u: MailInfo) => {
+                                    //@ts-ignore
+                                    u.subject = e.target.value
+                                    return { ...u }
+                                })
+                            } className="p-2 md:p-4 md:w-full rounded dark:text-white dark:bg-darkgray text-black bg-lightgray outline-none border border-transparent focus:border-lightgrayx hover:border-lightgrayx dark:focus:border-darkgrayx dark:hover:border-darkgrayx"/>
+                            {errors.subjectError ? (
+                              <p className="dark:text-darkred text-lightred">{errors.subjectError}</p>
+                            ) : null}
+                          </div>
+                      </div>
+                      <div className="flex flex-col space-y-2">
+                        <input type="text" placeholder="Email address" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                                setInfo((u: MailInfo) => {
+                                    //@ts-ignore
+                                    u.mail = e.target.value
+                                    return { ...u }
+                                })
+                            } className="p-2 md:p-4 rounded dark:text-white dark:bg-darkgray text-black bg-lightgray outline-none border border-transparent focus:border-lightgrayx hover:border-lightgrayx dark:focus:border-darkgrayx dark:hover:border-darkgrayx"/>
+                        {errors.mailError? (
+                          <p className="dark:text-darkred text-lightred">{errors.mailError}</p>
+                        ): null}
+                      </div>
+                      <div className="flex flex-col space-y-2">
+                        <textarea name="message" id="message" cols={10} rows={7} placeholder="Message" onChange={(e: any) =>
+                                setInfo((u: MailInfo) => {
+                                    //@ts-ignore
+                                    u.message = e.target.value
+                                    return { ...u }
+                                })
+                            } className="p-4 resize-none rounded dark:text-white dark:bg-darkgray text-black bg-lightgray outline-none border border-transparent focus:border-lightgrayx hover:border-lightgrayx dark:focus:border-darkgrayx dark:hover:border-darkgrayx"/>
+                        {errors.messageError? (
+                          <p className="dark:text-darkred text-lightred">{errors.messageError}</p>
+                        ) : null}
+                      </div>
+                      <button className="px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded border-2 border-transparent hover:border-lightblue focus:border-lightblue" onClick={async() => await checkInfo()}>Send message</button>
+                  </section>
+              </main>
+          </div>
         </div>
     )
 }

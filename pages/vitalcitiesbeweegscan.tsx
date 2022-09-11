@@ -8,7 +8,7 @@ export default function Beweegscan () {
     const [dark, setDark] = useState<boolean>()
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
+        <div className={`h-full ${dark? 'bg-black': 'bg-white'} landscape:pb-80`}>
             <Header setDark={setDark} dark={dark}/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <div className="flex flex-col md:grid md:grid-cols-3 md:justify-between md:items-center mb-8">
@@ -21,14 +21,14 @@ export default function Beweegscan () {
                             <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>CMS</h4>
                         </div>
                     </div>
-                    <div className="mt-8 md:mt-0 block md:col-start-3 relative w-30 h-96">
+                    <div className="mt-8 md:mt-0 block md:col-start-3 relative w-30 h-44">
                         <Image src={vitalcities} alt="image of vital cities" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                     </div>
                 </div>
                 <section>
                     <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-2xl md:text-4xl mb-4`}>Explanation</h1>
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:grid-rows-none lg:gap-4">
-                        <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20">
+                        <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20 mb-32 md:mb-0">
                             <Image src={netlify} alt="image of netlify cms" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                         </div>
                         <div className="flex flex-col space-y-4 lg:col-start-1 lg:col-end-3">

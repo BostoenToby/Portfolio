@@ -8,27 +8,27 @@ export default function Portfolio () {
     const [dark, setDark] = useState<boolean>()
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
+        <div className={`h-full ${dark? 'bg-black': 'bg-white'} landscape:pb-[26rem]`}>
             <Header setDark={setDark} dark={dark}/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <div className="flex flex-col md:grid md:grid-cols-3 md:justify-between md:items-center mb-8">
                     <div className="md:col-start-1 md:col-end-3 w-full sm:w-3/4 md:w-full">
                         <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl md:text-5xl mb-8`}>Portfolio</h1>
                         <div className="grid grid-cols-2 grid-rows-3 sm:grid-cols-3 sm:grid-rows-2 lg:flex gap-4">
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded`}>2021-2022</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded`}>frontend</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded`}>data storage</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} p-2 rounded`}>CMS</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>2021-2022</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>frontend</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>data storage</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>CMS</h4>
                         </div>
                     </div>
-                    <div className="mt-8 md:mt-0 block md:col-start-3 relative w-80 h-auto">
+                    <div className="mt-8 md:mt-0 block md:col-start-3 relative w-80 h-auto landscape:w-60">
                         <Image src={personalImageFull} alt="an image of the creator of the site" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                     </div>
                 </div>
                 <section>
                     <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-2xl md:text-4xl mb-4`}>Explanation</h1>
                     <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 lg:grid-rows-none lg:gap-4">
-                        <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20">
+                        <div className="lg:col-start-4 lg:col-end-6 lg:row-start-1 lg:row-end-2 mt-4 block w-full h-20 mb-32 md:mb-0">
                             <Image src={personalImage} alt="an image of the creator of the site" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/>
                         </div>
                         <div className="flex flex-col space-y-4 lg:col-start-1 lg:col-end-3">
