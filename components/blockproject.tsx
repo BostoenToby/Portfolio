@@ -1,7 +1,7 @@
 import Image from "../node_modules/next/image";
 import Link from "../node_modules/next/link";
 
-const Projectblock = ({dark, image, title, explanation, altImage} : {dark: boolean, image: any, title: string, explanation: string, altImage: string}) => {
+const Blockproject = ({dark, image, title, explanation, altImage} : {dark: boolean, image: any, title: string, explanation: string, altImage: string}) => {
     return(
         <section className="flex flex-col md:grid md:grid-cols-3 space-x-4 mb-16">
             <div className="md:col-start-1 md:col-end-3 flex flex-col space-y-10">
@@ -17,4 +17,4 @@ const Projectblock = ({dark, image, title, explanation, altImage} : {dark: boole
     )
 }
 
-export default Projectblock
+export default Blockproject

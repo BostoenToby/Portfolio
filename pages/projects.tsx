@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import Header from "../components/header"
-import Projectblock from "../components/projectblock"
 import cocktailmaker from '../public/cocktailmaker.jpg'
 import vitalcities from '../public/vitalcities.png'
 import personalprogrammer from '../public/personalprogrammer.jpg'
+import Blockproject from "../components/blockproject"
 
 export default function Projects () {
     const [dark, setDark] = useState<boolean>()
@@ -53,7 +53,7 @@ export default function Projects () {
                             break;
                     }
                     return(
-                        <Projectblock dark={dark} key={index} image={image} title={project.title} explanation={project.explanation} altImage={project.alt}/>
+                        <Blockproject dark={dark} key={index} image={image} title={project.title} explanation={project.explanation} altImage={project.alt}/>
                     )
                 })}
             </main>
