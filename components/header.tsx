@@ -8,8 +8,6 @@ import { getStorage, setStorage } from "./localstorage"
 const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
     const [showSideNav, setShowSideNav] = useState<boolean>(false)
-    const fileURL = "/public/cv.pdf"
-    const fileName = "cv.pdf";
 
     useEffect(() => {
         console.log({params})
@@ -47,11 +45,11 @@ const Header = (params) => {
         <div className={`${params.dark? 'dark' : null} z-10`}>
             {fullSize? (
                 <header className="flex justify-between items-center mx-8 pt-6 font-montserrat">
-                    <Link href="/"><h1 className="dark:text-white dark:border-white text-black border-black border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
+                    <Link href="/"><h1 className="cursor-pointer dark:text-white dark:border-white text-black border-black border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
                     <div className="flex space-x-12 sm:text-sm">
-                        <Link href="/"><p className="text-base dark:text-white text-black cursor-pointer">Home</p></Link>
-                        <Link href="/projects"><p className="text-base dark:text-white text-black cursor-pointer">Projects</p></Link>
-                        <Link href="/about"><p className="text-base dark:text-white text-black cursor-pointer">About</p></Link>
+                        <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Home' ? 'text-lightblue' : null}`}>Home</p></div></Link>
+                        <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' ? 'text-lightblue' : null}`}>Projects</p></div></Link>
+                        <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'About' ? 'text-lightblue' : null}`}>About</p></div></Link>
                         <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a>
                     </div>
                     <div className="flex space-x-4 items-center">
@@ -73,16 +71,16 @@ const Header = (params) => {
                                     <h3 className="dark:text-lightblue text-green text-lg md:text-xl">Dashboard</h3>
                                 </div>
                                 <section className="mt-4 mx-4 md:mt-8 md:mx-8 space-y-4">
-                                    <Link href="/"><p className="text-base dark:text-white text-black cursor-pointer">Home</p></Link>
-                                    <Link href="/projects"><p className="text-base dark:text-white text-black cursor-pointer">Projects</p></Link>
-                                    <Link href="/about"><p className="text-base dark:text-white text-black cursor-pointer">About</p></Link>
+                                    <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Home' ? 'text-lightblue' : null}`}>Home</p></div></Link>
+                                    <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' ? 'text-lightblue' : null}`}>Projects</p></div></Link>
+                                    <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'About' ? 'text-lightblue' : null}`}>About</p></div></Link>
                                     <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a></p>
                                     <Link href="/contact"><p className="text-base dark:text-white text-black cursor-pointer">Contact</p></Link>
                                 </section>
                             </div>
                         </div>
                     </div>
-                    <Link href="/"><h1 className="dark:text-white dark:border-white text-black border-black border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
+                    <Link href="/"><h1 className="cursor-pointer dark:text-white dark:border-white text-black border-black border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
                 </header>
             )}
         </div>

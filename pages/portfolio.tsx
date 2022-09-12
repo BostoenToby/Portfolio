@@ -8,7 +8,7 @@ export default function Portfolio () {
     const [dark, setDark] = useState<boolean>()
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'} landscape:pb-[26rem]`}>
+        <div className={`h-full ${dark? 'bg-black': 'bg-white'} xsm:pb-20 sm:pb-52 md:pb-96 xmd:pb-[490px] lg:pb-0`}>
             <Header setDark={setDark} dark={dark}/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <div className="flex flex-col md:grid md:grid-cols-3 md:justify-between md:items-center mb-8">

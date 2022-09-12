@@ -8,7 +8,7 @@ export default function Beweegscan () {
     const [dark, setDark] = useState<boolean>()
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'} landscape:pb-80`}>
+        <div className={`h-full ${dark? 'bg-black': 'bg-white'} xsm:pb-20 sm:pb-40 md:pb-80 xmd:pb-96 lg:pb-0`}>
             <Header setDark={setDark} dark={dark}/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <div className="flex flex-col md:grid md:grid-cols-3 md:justify-between md:items-center mb-8">

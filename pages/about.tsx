@@ -3,6 +3,7 @@ import { useState } from "react";
 import business from '../public/business.jpeg';
 import personalprogrammer from '../public/computergray.jpg';
 import computer from '../public/computergray.jpg';
+import zen from '../public/zen.jpg';
 import Header from "../components/header";
 
 export default function About () {
@@ -11,7 +12,7 @@ export default function About () {
     return(
         <div className={`${dark? 'dark' : null}`}>
             <div className="h-full  dark:bg-black bg-white">
-                <Header setDark={setDark} dark={dark}/>
+                <Header setDark={setDark} dark={dark} active="About"/>
                 <main className="font-montserrat mx-8 pt-8 md:pt-2 landscape:mt-12">
                     <section className="flex flex-col md:justify-center">
                         <div className="flex flex-col md:flex-row mb-16 space-x-16 md:items-center">
@@ -43,7 +44,7 @@ export default function About () {
                                     <p className="dark:text-white text-black text-lg">On this website you'll get to see my <span className="font-bold">improvements</span> and some of my <span className="font-bold">projects</span> throughout my course of learning and developing. Hopefully you'll get inspired to improve yourself and your knowledge and who knows, maybe there's even place and time to collaborate on some projects.</p>
                                 </div>
                             </div>
-                            <picture className="relative hidden lgx:block w-auto md:w-full md:h-30 pt-4 !-ml-0"><Image src={computer} alt="image of a computer" className="rounded"/></picture>
+                            <picture className="relative hidden lgx:block w-auto md:w-full md:h-30 pt-4 !-ml-0"><Image src={zen} alt="image of a computer" placeholder="blur" className="rounded"/></picture>
                         </div>
                     </section>
                 </main>

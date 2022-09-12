@@ -36,7 +36,7 @@ export default function Projects () {
 
     return(
         <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
-            <Header setDark={setDark} dark={dark}/>
+            <Header setDark={setDark} dark={dark} active="Projects"/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>Projects</h1>               
                 {projects.map((project, index) => {

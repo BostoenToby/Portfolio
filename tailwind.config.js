@@ -4,10 +4,12 @@ module.exports = {
   content: ['**/*.{tsx,html}'],
   theme: {
     screens: {
+      'xsm': "450px",
       'sm': '640px',
       'xsmH': {'raw': '(min-height: 400px)'},
       'smH': {'raw': '(min-height: 720px)'},
       'md': '768px',
+      'xmd': '900px',
       'lg': '1024px',
       'lgx': '1100px',
       'xl': '1280px',
