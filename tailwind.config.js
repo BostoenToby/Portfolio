@@ -9,6 +9,7 @@ module.exports = {
       'smH': {'raw': '(min-height: 720px)'},
       'md': '768px',
       'lg': '1024px',
+      'lgx': '1100px',
       'xl': '1280px',
       '2xl': '1536px',
     },

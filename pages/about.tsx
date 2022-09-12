@@ -19,13 +19,13 @@ export default function About () {
                                 <h1 className="dark:text-lightblue text-green text-3xl md:text-5xl">Some words about me, if you're interested at least</h1>
                                 <p className="dark:text-white text-black text-lg">Toby Bostoen is a passionate <span className="font-bold">frontend developer</span> based in Belgium. He is a final year student <span className="font-bold">MCT at Howest Kortrijk</span></p>
                             </div>
-                            <picture className="relative w-auto h-auto md:w-full md:h-30 pt-4 !-ml-0"><Image src={personalprogrammer} alt="image of a computer" className="rounded" layout="responsive" placeholder="blur" objectFit="cover" /></picture>
+                            <picture className="relative w-auto 2xl:w-[730px] md:w-full md:h-30 pt-4 !-ml-0"><Image src={personalprogrammer} alt="image of a computer" className="rounded" layout="responsive" placeholder="blur" objectFit="cover" /></picture>
                         </div>
                     </section>
                     <section className="flex flex-col items-center md:justify-center">
                         <div className="flex flex-col-reverse md:flex-row mb-16 space-x-16 md:items-center">
-                            <picture className="relative w-max h-auto md:w-full md:h-full pt-4 !-ml-0 md:min-w-max"><Image src={business} alt="image with the text: open for business" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/></picture>
-                            <div className="space-y-4 md:space-y-10 md:pl-12 !-ml-0">
+                            <picture className="relative hidden w-auto lgx:block 2xl:w-[1200px] md:w-full md:h-30 pt-4 !-ml-0"><Image src={business} alt="image with the text: open for business" layout="responsive" placeholder="blur" objectFit="cover" className="rounded"/></picture>
+                            <div className="space-y-4 md:space-y-10 lgx:pl-12 !-ml-0">
                                 <h3 className="dark:text-lightblue text-green text-3xl">Some of my qualities</h3>
                                 <div className="space-y-4 text-left">
                                     <p className="dark:text-white text-black text-lg">Toby is a person who likes to know how things were build and programmed. Sometimes he's thinking about how some things can be <span className="font-bold">improved</span> and be <span className="font-bold">made even faster</span>. His strong points are that he likes to <span className="font-bold">stay open minded</span> about newer technologies and he likes to learn more every day. Sitting still isn't something he likes to do because he wants to be <span className="font-bold">productive</span> throughout the day.</p>
@@ -43,7 +43,7 @@ export default function About () {
                                     <p className="dark:text-white text-black text-lg">On this website you'll get to see my <span className="font-bold">improvements</span> and some of my <span className="font-bold">projects</span> throughout my course of learning and developing. Hopefully you'll get inspired to improve yourself and your knowledge and who knows, maybe there's even place and time to collaborate on some projects.</p>
                                 </div>
                             </div>
-                            <picture className="relative w-auto h-auto md:w-full md:h-30 pt-4 !-ml-0"><Image src={computer} alt="image of a computer" className="rounded"/></picture>
+                            <picture className="relative hidden lgx:block w-auto md:w-full md:h-30 pt-4 !-ml-0"><Image src={computer} alt="image of a computer" className="rounded"/></picture>
                         </div>
                     </section>
                 </main>
