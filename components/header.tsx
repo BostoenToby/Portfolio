@@ -1,4 +1,5 @@
 //@ts-ignore
+import { Download } from "lucide-react"
 import { Sun, Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "../node_modules/next/link"
@@ -7,6 +8,8 @@ import { getStorage, setStorage } from "./localstorage"
 const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
     const [showSideNav, setShowSideNav] = useState<boolean>(false)
+    const fileURL = "/public/cv.pdf"
+    const fileName = "cv.pdf";
 
     useEffect(() => {
         console.log({params})
@@ -49,6 +52,7 @@ const Header = (params) => {
                         <Link href="/"><p className="text-base dark:text-white text-black cursor-pointer">Home</p></Link>
                         <Link href="/projects"><p className="text-base dark:text-white text-black cursor-pointer">Projects</p></Link>
                         <Link href="/about"><p className="text-base dark:text-white text-black cursor-pointer">About</p></Link>
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a>
                     </div>
                     <div className="flex space-x-4 items-center">
                         <Sun className="cursor-pointer dark:text-lightgray text-darkgray" onClick={async() => {changeTheme()}}/>
@@ -72,6 +76,7 @@ const Header = (params) => {
                                     <Link href="/"><p className="text-base dark:text-white text-black cursor-pointer">Home</p></Link>
                                     <Link href="/projects"><p className="text-base dark:text-white text-black cursor-pointer">Projects</p></Link>
                                     <Link href="/about"><p className="text-base dark:text-white text-black cursor-pointer">About</p></Link>
+                                    <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a></p>
                                     <Link href="/contact"><p className="text-base dark:text-white text-black cursor-pointer">Contact</p></Link>
                                 </section>
                             </div>

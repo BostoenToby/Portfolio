@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     screens: {
       'sm': '640px',
+      'xsmH': {'raw': '(min-height: 400px)'},
+      'smH': {'raw': '(min-height: 720px)'},
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
