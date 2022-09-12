@@ -50,7 +50,7 @@ const Header = (params) => {
                         <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Home' ? 'text-lightblue' : null}`}>Home</p></div></Link>
                         <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' ? 'text-lightblue' : null}`}>Projects</p></div></Link>
                         <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'About' ? 'text-lightblue' : null}`}>About</p></div></Link>
-                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a>
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a>
                     </div>
                     <div className="flex space-x-4 items-center">
                         <Sun className="cursor-pointer dark:text-lightgray text-darkgray" onClick={async() => {changeTheme()}}/>
@@ -74,7 +74,7 @@ const Header = (params) => {
                                     <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Home' ? 'text-lightblue' : null}`}>Home</p></div></Link>
                                     <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' ? 'text-lightblue' : null}`}>Projects</p></div></Link>
                                     <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'About' ? 'text-lightblue' : null}`}>About</p></div></Link>
-                                    <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download className="dark:text-white text-black"/></div></a></p>
+                                    <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a></p>
                                     <Link href="/contact"><p className="text-base dark:text-white text-black cursor-pointer">Contact</p></Link>
                                 </section>
                             </div>
