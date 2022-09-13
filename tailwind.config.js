@@ -29,6 +29,7 @@ module.exports = {
         'darkgrayx': '#454642',
         'lightblue': '#7DE2D1',
         'green': '#339989',
+        'darkgreen': '#1F7F70',
         'lightred': '#ED4337',
         'darkred': '#FF0033'
       }
