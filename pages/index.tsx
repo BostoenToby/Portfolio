@@ -8,12 +8,17 @@ export default function Home() {
 
   const languages = [
     "Javascript",
+    "Typescript",
     "Python",
-    "NextJS",
+    "Next.js",
     "React",
     "Gatsby",
-    "TailwindCSS",
-    "C#"
+    "C#",
+    "MySQL",
+    "CosmosDB",
+    "HTML",
+    "CSS",
+    "TailwindCSS"
   ]
 
   return (
@@ -23,14 +28,14 @@ export default function Home() {
         <main className="font-montserrat pt-0 mx-8 space-y-4">
           <section className="sm:grid sm:grid-rows-2 md:grid-cols-2 md:grid-rows-none">
             <div className="md:col-start-1 md:px-4 text-center landscape:py-12 portrait:py-40 md:py-40 flex flex-col my-auto">
-              <div className="xsmH:mb-12 mb-8">
+              <div className="xsmH:mb-2 mb-0">
                 <h1 className="dark:text-white text-black text-3xl md:text-5xl pb-4">Toby Bostoen</h1>
                 <h2 className="dark:text-white text-black text-xl md:text-3xl leading-normal">Full-stack Web Developer<br />Based in Belgium</h2>
               </div>
-              <div className="dark:text-white text-black grid grid-rows-2 grid-cols-4 justify-between text-xl items-end space-y-4 space-x-4">
+              <div className="dark:text-white text-black grid landscape:grid-rows-3 landscape:grid-cols-4 portrait:grid-rows-4 portrait:grid-cols-3 gap-x-12 items-end space-y-4">
                 {languages.map((lang, index) => {
                   return(
-                    <p key={index} className="dark:text-white text-black text-sm md:text-xl lg:text-3xl`">{lang}</p>
+                    <p key={index} className="dark:text-white text-black text-sm landscape:md:text-sm md:text-xl lg:text-3xl`">{lang}</p>
                   )
                 })}
               </div>
