@@ -25,7 +25,7 @@ export default function Home() {
             <div className="md:col-start-1 md:px-4 text-center landscape:py-12 portrait:py-40 md:py-40 flex flex-col my-auto">
               <div className="xsmH:mb-12 mb-8">
                 <h1 className="dark:text-white text-black text-3xl md:text-5xl pb-4">Toby Bostoen</h1>
-                <h2 className="dark:text-white text-black text-xl md:text-3xl leading-normal">Frontend Developer<br />Based in Belgium</h2>
+                <h2 className="dark:text-white text-black text-xl md:text-3xl leading-normal">Full-stack Web Developer<br />Based in Belgium</h2>
               </div>
               <div className="dark:text-white text-black grid grid-rows-2 grid-cols-4 justify-between text-xl items-end space-y-4 space-x-4">
                 {languages.map((lang, index) => {

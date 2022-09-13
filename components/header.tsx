@@ -9,8 +9,9 @@ const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
     const [showSideNav, setShowSideNav] = useState<boolean>(false)
 
+    let dissapearTimeout
+
     useEffect(() => {
-        console.log({params})
         if(getStorage("dark") != undefined || getStorage("dark") != null){
             params.setDark(getStorage("dark") === 'true' ? true : false)
             console.log(getStorage("dark") === 'true' ? true : false)
@@ -41,6 +42,28 @@ const Header = (params) => {
     const handleSideBar = () => {
         setShowSideNav(!showSideNav)
     }
+
+    const Show = (array: string[]) => {
+        console.log("show")
+        array.forEach(link => document.getElementById(link).style.opacity = '100')
+        array.forEach(link => document.getElementById(link).style.display = 'block')
+    }
+
+    const Dissapear = (array: string[]) => {
+        console.log("dissapear")
+        dissapearTimeout = setTimeout(() => {
+            array.forEach(link => {
+                const linkItem = document.getElementById(link)
+                linkItem.style.opacity = '0'
+            })
+        }, 2000)
+    }
+
+    const InterruptDissapear = () => {
+        console.log("interrupt")
+        clearTimeout(dissapearTimeout)
+    }
+
     return(
         <div className={`${params.dark? 'dark' : null} z-10`}>
             {fullSize? (
@@ -48,7 +71,12 @@ const Header = (params) => {
                     <Link href="/"><h1 className="cursor-pointer dark:text-white dark:border-white text-black border-black border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
                     <div className="flex space-x-12 sm:text-sm">
                         <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Home' ? 'text-lightblue' : null}`}>Home</p></div></Link>
-                        <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' ? 'text-lightblue' : null}`}>Projects</p></div></Link>
+                        <div className="flex flex-col">
+                            <Link href="/projects"><div onMouseEnter={() => {InterruptDissapear(); Show(["cocktailmaker", "vitalcities", "portfolio"])}} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Projects' || params.active === "Vitalcities" || params.active === "Portfolio" || params.active === "Cocktailmaker" ? 'text-lightblue' : null}`}>Projects</p></div></Link>
+                            <div id="cocktailmaker" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="pb-1 px-1 pr-3 rounded-sm border-b-[1px] border-l-[1px] border-black dark:border-white hidden transition-opacity ease-in text-opacity-0 absolute mt-7"><Link href="/cocktailmaker"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Cocktailmaker' ? 'text-lightblue': null}`}>Cocktailmaker</p></div></Link></div>
+                            <div id="vitalcities" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="pb-1 px-1 pr-3 rounded-sm border-b-[1px] border-l-[1px] border-black dark:border-white hidden transition-opacity ease-in text-opacity-0 absolute mt-14"><Link href="/vitalcitiesbeweegscan"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Vitalcities' ? 'text-lightblue': null}`}>Vital Cities Beweegscan</p></div></Link></div>
+                            <div id="portfolio" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="pb-1 px-1 pr-3 rounded-sm border-b-[1px] border-l-[1px] border-black dark:border-white hidden transition-opacity ease-in text-opacity-0 absolute mt-[84px]"><Link href="/portfolio"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'Portfolio' ? 'text-lightblue': null}`}>Portfolio</p></div></Link></div>
+                        </div>
                         <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`${params.active === 'About' ? 'text-lightblue' : null}`}>About</p></div></Link>
                         <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a>
                     </div>
