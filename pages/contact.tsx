@@ -21,15 +21,17 @@ export default function Contact () {
         messageError: "",
     })
 
-    async function sendgridMail(mail: MailInfo) {
+    async function sendgridMail(mail: MailInfo, array: string[]) {
         try {
         console.log("trying to send mail")
-          return await axios.post('/.netlify/functions/sendmail/sendmail',{
+          await axios.post('/.netlify/functions/sendmail/sendmail',{
             message: mail.message,
             subject: mail.subject,
             senderEmail: mail.mail,
             senderName: mail.name
           })
+          //@ts-ignore
+          array.forEach(input => document.getElementById(input).value="")
         } catch (error) {
           console.log(error)
           console.log("it didn't work")
@@ -95,7 +97,7 @@ export default function Contact () {
           }
 
           if (!errorsName && !errorsMail && !errorsSubject && !errorsMessage) {
-            sendgridMail(info)
+            sendgridMail(info, ["Name", "Subject", "Mail", "Message"])
           }
     }
 
@@ -111,7 +113,7 @@ export default function Contact () {
                   <section className="flex flex-col space-y-4 w-full !-ml-0 lg:!ml-4 md:w-1/2">
                       <div className="flex justify-between">
                           <div className="flex flex-col space-y-2 w-2/5">
-                            <input type="text" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                            <input type="text" id="Name" placeholder="Full name" onInput={(e: React.FormEvent<HTMLInputElement>) =>
                                 setInfo((u: MailInfo) => {
                                     //@ts-ignore
                                     u.name = e.target.value
@@ -123,7 +125,7 @@ export default function Contact () {
                             ) : null}
                           </div>
                           <div className="flex flex-col space-y-2 w-1/2">
-                            <input type="text" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                            <input type="text" id="Subject" placeholder="Subject" onInput={(e: React.FormEvent<HTMLInputElement>) =>
                                 setInfo((u: MailInfo) => {
                                     //@ts-ignore
                                     u.subject = e.target.value
@@ -136,7 +138,7 @@ export default function Contact () {
                           </div>
                       </div>
                       <div className="flex flex-col space-y-2">
-                        <input type="text" placeholder="Email address" onInput={(e: React.FormEvent<HTMLInputElement>) =>
+                        <input type="text" id="Mail" placeholder="Email address" onInput={(e: React.FormEvent<HTMLInputElement>) =>
                                 setInfo((u: MailInfo) => {
                                     //@ts-ignore
                                     u.mail = e.target.value
@@ -148,7 +150,7 @@ export default function Contact () {
                         ): null}
                       </div>
                       <div className="flex flex-col space-y-2">
-                        <textarea name="message" id="message" cols={10} rows={7} placeholder="Message" onChange={(e: any) =>
+                        <textarea name="message" id="Message" cols={10} rows={7} placeholder="Message" onChange={(e: any) =>
                                 setInfo((u: MailInfo) => {
                                     //@ts-ignore
                                     u.message = e.target.value
