@@ -35,7 +35,7 @@ export default function Home() {
               <div className="dark:text-white text-black grid landscape:grid-rows-3 landscape:grid-cols-4 portrait:grid-rows-4 portrait:grid-cols-3 gap-x-12 items-end space-y-4">
                 {languages.map((lang, index) => {
                   return(
-                    <p key={index} className="dark:text-white text-black text-sm landscape:md:text-sm md:text-xl lg:text-3xl`">{lang}</p>
+                    <p key={index} className="dark:text-white text-black text-base landscape:text-sm landscape:md:text-sm landscape:lg:text-base landscape:xl:text-lg md:text-xl lg:text-3xl`">{lang}</p>
                   )
                 })}
               </div>
