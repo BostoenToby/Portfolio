@@ -15,10 +15,9 @@ export default function Portfolio () {
                     <div className="md:col-start-1 md:col-end-3 w-full sm:w-3/4 md:w-full">
                         <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-3xl md:text-5xl mb-8`}>Portfolio</h1>
                         <div className="grid grid-cols-2 grid-rows-3 sm:grid-cols-3 sm:grid-rows-2 lg:flex gap-4">
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>2021-2022</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>frontend</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>data storage</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>CMS</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#2021-2022</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#frontend</h4>
+                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#data storage</h4>
                         </div>
                     </div>
                     <div className="mt-8 md:mt-0 block md:col-start-3 relative w-80 h-auto landscape:w-60">

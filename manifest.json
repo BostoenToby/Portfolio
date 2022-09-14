@@ -1,0 +1,31 @@
+{
+    "short_name": "Toby Bostoen",
+    "name": "Toby Bostoen Portfolio",
+    "icons": [
+        {
+            "src": "/public/android-chrome-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/public/apple-touch-icon.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "/public/favicon-16x16.png",
+            "type": "image/png",
+            "sizes": "16x16"
+        },
+        {
+            "src": "/public/favicon-32x32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#FFFAFB",
+    "display": "standalone",
+    "scope": "/app/",
+    "theme_color": "#FFFAFB"
+}

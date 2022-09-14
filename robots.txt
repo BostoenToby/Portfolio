@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /tailwind.css
+Disallow: /pages/cocktailmaker.tsx
+Disallow: /components/
+Disallow: /functions/
+Disallow: /interfaces/
+Dissalow: /pages/portfolio.tsx
+Dissalow: /pages/vitalcitiesbeweegscan.tsx
+Dissalow: /vitalcitiesbeweegscan.tsx
+Dissalow: /cocktailmaker.tsx
+Dissalow: /portfolio.tsx
+Dissalow: /assets/
+Dissalow: /static/
+Dissalow: /public/

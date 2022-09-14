@@ -28,6 +28,7 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#da532c"/>
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFAFB"/>
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131515"/>
+          <link rel="manifest" href="/manifest.json"/>
         </Head>
         <body className="100vh">
           <Main/>

@@ -10,10 +10,10 @@ export default function About () {
     const [dark, setDark] = useState<boolean>()
 
     return(
-        <div className={`${dark? 'dark' : null}`}>
+        <div className={`${dark? 'dark' : null} scrollbar`}>
             <div className="h-full  dark:bg-black bg-white">
                 <Header setDark={setDark} dark={dark} active="About" />
-                <main className="font-montserrat mx-8 pt-8 md:pt-2 landscape:mt-12">
+                <main className="font-montserrat mx-8 pt-8 md:pt-2 landscape:mt-12 max-w-[1200px] xl:mx-auto">
                     <section className="flex flex-col md:justify-center">
                         <div className="flex flex-col md:flex-row mb-16 space-x-16 md:items-center">
                             <div className="space-y-4 md:space-y-10 md:pr-12">
