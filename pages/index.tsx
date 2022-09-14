@@ -27,7 +27,7 @@ export default function Home({darkParam} : {darkParam: boolean}) {
         <main className="font-montserrat pt-0 mx-8 space-y-4 pb-16 h-[calc(100vh-80px)] grid items-center grid-cols-none grid-rows-none">
           <section className="flex w-full mx-auto items-center justify-center xxsm:grid xxsm:grid-cols-none xxsm:grid-rows-5 phoneS20:grid-rows-5 landscape:grid-cols-2 landscape:grid-rows-none ipadMini:grid-rows-5 ipadMini:grid-cols-none next:grid-cols-2 next:grid-rows-none max-w-[1100px]">
             
-            <div className="xxsm:row-start-3 xxsm:row-end-6 xxsm:pb-4 phoneS20:row-start-3 phoneS20:row-end-6 ipadMini:row-start-3 ipadMini:row-end-6 next:col-start-1 next:row-start-1 text-center h-full flex flex-col items-center justify-center ipadMini:pb-20 surface:pb-40 landscape:col-start-1 landscape:row-start-1">
+            <div className="xxsm:row-start-3 xxsm:row-end-6 xxsm:pb-0 phoneS20:row-start-3 phoneS20:row-end-6 ipadMini:row-start-3 ipadMini:row-end-6 next:col-start-1 next:row-start-1 text-center h-full flex flex-col items-center justify-center ipadMini:pb-20 surface:pb-40 landscape:col-start-1 landscape:row-start-1">
               <div className="mb-0 surface:pb-8">
                 <h1 className="dark:text-lightblue text-green text-5xl phoneS20:text-2xl ipadMini:text-4xl surface:text-5xl pb-4 landscape:text-xl landscape:ipadMiniLand:text-4xl landscape:next:text-4xl">Toby Bostoen</h1>
                 <h2 className="dark:text-white text-black text-xl phoneS20:text-xl md:text-3xl ipadMini:text-3xl surface:text-4xl leading-normal landscape:text-lg landscape:ipadMiniLand:text-3xl landscape:next:text-3xl">Full-stack Web Developer<br />Based in Belgium</h2>
