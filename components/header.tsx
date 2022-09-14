@@ -72,7 +72,7 @@ const Header = (params) => {
                     </div>
                     <div className="flex space-x-4 items-center">
                         <button><Sun className="cursor-pointer dark:text-lightblue text-green" onClick={async() => {changeTheme()}} onKeyPress={(event: any) => {if(event.key === 'Enter'){changeTheme()}}}/></button>
-                        <Link href="/contact"><button className="dark:bg-darkgray dark:text-white bg-lightgray text-black p-2 rounded">Contact</button></Link>
+                        <Link href="/contact"><button className="dark:bg-darkgray dark:text-white bg-lightgray text-black hover:dark:bg-lightblue hover:text-white hover:bg-green p-2 rounded">Contact</button></Link>
                     </div>
                 </header>
             ) : (
