@@ -8,7 +8,7 @@ module.exports = {
       'xsm': "450px",
       'sm': '640px',
       'xsmH': {'raw': '(min-height: 400px)'},
-      'smH': {'raw': '(min-height: 720px)'},
+      'smH': {'raw': '(min-height: 720px), (max-width: 1024px)'},
       'md': '768px',
       'xmd': '900px',
       'lg': '1024px',

@@ -16,6 +16,7 @@ class MyDocument extends Document {
           href="https://fonts.googleapis.com/css2?family=Montserrat&display=optional"
           rel="stylesheet"
           />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
           <meta name="description" content="This is the portfolio of Toby Bostoen"/>
           <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png"/>
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>

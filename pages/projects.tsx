@@ -8,10 +8,6 @@ import Blockproject from "../components/blockproject"
 export default function Projects () {
     const [dark, setDark] = useState<boolean>()
 
-    useEffect(() => {
-        projects.forEach((project) => console.log(project.image))
-    }, [])
-
     const projects = [{
         title: "Cocktail Maker",
         explanation: "My first individual project for school was a cocktail maker. This was made in my first year of my bachelor course. I've used a Rasperrby Pi 4B and python to program the cocktail maker. On the screen there is a IP address displayed where you can surf to. If you load the webpage you'll see what cocktails are available and you're able to make these. There are also statistics about how much there is left of a certain drink, how hot the drinks are, how much a certain cocktail was asked in a period of time. You don't have to use the webpage to make cocktails because you can also press a button on the keypad to make a cocktail. The display shows different screens and each screen has different cocktails with the number displayed.",

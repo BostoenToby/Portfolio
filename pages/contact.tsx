@@ -23,7 +23,6 @@ export default function Contact () {
 
     async function sendgridMail(mail: MailInfo, array: string[]) {
         try {
-        console.log("trying to send mail")
           await axios.post('/.netlify/functions/sendmail/sendmail',{
             message: mail.message,
             subject: mail.subject,
@@ -34,7 +33,6 @@ export default function Contact () {
           array.forEach(input => document.getElementById(input).value="")
         } catch (error) {
           console.log(error)
-          console.log("it didn't work")
         }
     }
     
