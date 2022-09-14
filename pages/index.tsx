@@ -35,13 +35,13 @@ export default function Home({darkParam} : {darkParam: boolean}) {
               <div className="dark:text-white text-black grid grid-rows-4 grid-cols-3 ipadMini:grid-rows-3 ipadMini:grid-cols-4 surfaceDuo:grid-rows-3 surfaceDuo:grid-cols-4 next:grid-rows-3 next:grid-cols-4 gap-x-4 items-end space-y-4">
                 {languages.map((lang, index) => {
                   return(
-                    <div className="p-2 phoneS20:p-1 ipadMini:p-3 landscape:p-1 landscape:ipadMiniLand:p-3 landscape:next:p-2 dark:bg-darkgray bg-lightgray rounded">
+                    <div key={index} className="p-2 phoneS20:p-1 ipadMini:p-3 landscape:p-1 landscape:ipadMiniLand:p-3 landscape:next:p-2 dark:bg-darkgray bg-lightgray rounded">
                       {lang == 'C#'? (
                         <i className="devicon-csharp-plain text-xl ipadMini:text-3xl surface:text-4xl landscape:hidden landscape:ipadMiniLand:block landscape:ipadMiniLand:text-3xl landscape:next:text-2xl landscape:next:block dark:text-lightblue text-green"></i>
                       ): (
                         <i className={`devicon-${lang.toLocaleLowerCase()}-plain text-xl ipadMini:text-3xl surface:text-4xl landscape:hidden landscape:ipadMiniLand:block landscape:ipadMiniLand:text-3xl landscape:next:text-2xl landscape:next:block dark:text-lightblue text-green`}></i>
                       )}
-                      <p key={index} className="dark:text-white text-black text-sm phoneS20:text-sm ipadMini:text-xl surface:text-2xl landscape:text-xs landscape:ipadMiniLand:text-base landscape:next:text-base">{lang}</p>
+                      <p className="dark:text-white text-black text-sm phoneS20:text-sm ipadMini:text-xl surface:text-2xl landscape:text-xs landscape:ipadMiniLand:text-base landscape:next:text-base">{lang}</p>
                     </div>
                   )
                 })}
