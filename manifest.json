@@ -3,9 +3,9 @@
     "name": "Toby Bostoen Portfolio",
     "icons": [
         {
-            "src": "/public/android-chrome-144x144.png",
+            "src": "/public/android-chrome-192x192.png",
             "type": "image/png",
-            "sizes": "144x144"
+            "sizes": "192x192"
         },
         {
             "src": "/public/apple-touch-icon.png",
