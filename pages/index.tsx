@@ -3,9 +3,9 @@ import personalimage from '../public/personalimage.jpg';
 import Header from '../components/header'
 import { useState } from 'react';
 
-export default function Home() {
-  const [dark, setDark] = useState<boolean>()
-
+export default function Home({darkParam} : {darkParam: boolean}) {
+  const [dark, setDark] = useState<boolean>(darkParam)
+  
   const languages = [
     "Javascript",
     "Typescript",
@@ -24,7 +24,7 @@ export default function Home() {
     <div className={`${dark? 'dark': null}`}>
       <div className="h-screen overflow-x-hidden overflow-y-hidden z-0 dark:bg-black bg-white">
         <Header setDark={setDark} dark={dark} active="Home"/>
-        <main className="font-montserrat pt-0 mx-8 space-y-4 pb-16 h-full grid items-center grid-cols-none grid-rows-none">
+        <main className="font-montserrat pt-0 mx-8 space-y-4 pb-16 h-[calc(100vh-80px)] grid items-center grid-cols-none grid-rows-none">
           <section className="flex w-full mx-auto items-center justify-center xxsm:grid xxsm:grid-cols-none xxsm:grid-rows-5 phoneS20:grid-rows-5 landscape:grid-cols-2 landscape:grid-rows-none ipadMini:grid-rows-5 ipadMini:grid-cols-none next:grid-cols-2 next:grid-rows-none max-w-[1100px]">
             
             <div className="xxsm:row-start-3 xxsm:row-end-6 xxsm:pb-4 phoneS20:row-start-3 phoneS20:row-end-6 ipadMini:row-start-3 ipadMini:row-end-6 next:col-start-1 next:row-start-1 text-center h-full flex flex-col items-center justify-center ipadMini:pb-20 surface:pb-40 landscape:col-start-1 landscape:row-start-1">

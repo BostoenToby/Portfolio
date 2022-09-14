@@ -1,5 +1,7 @@
 //@ts-ignore
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { useEffect, useState } from 'react'
+import { getStorage, setStorage } from '../components/localstorage'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -7,6 +9,7 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
+  
   render() {
     return (
       <Html lang="en">
@@ -26,8 +29,8 @@ class MyDocument extends Document {
           <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFAFB"/>
           <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#131515"/>
         </Head>
-        <body>
-          <Main />
+        <body className="100vh">
+          <Main/>
           <NextScript />
         </body>
       </Html>

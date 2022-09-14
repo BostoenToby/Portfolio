@@ -4,6 +4,7 @@ import { Sun, Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "../node_modules/next/link"
 import { getStorage, setStorage } from "./localstorage"
+import fileDownload from 'js-file-download'
 
 const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
@@ -12,20 +13,6 @@ const Header = (params) => {
     let dissapearTimeout
 
     useEffect(() => {
-        if(getStorage("dark") != undefined || getStorage("dark") != null){
-            params.setDark(getStorage("dark") === 'true' ? true : false)
-        } else {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                // dark mode from OS
-                params.setDark(true)
-                setStorage("dark", true)
-            }
-            else {
-                params.setDark(false)
-                setStorage("dark", false)
-            }
-        }
-
         if(typeof window !== "undefined"){
             const updateSize = () => {
                 if(window.innerWidth >= 768){
@@ -71,48 +58,51 @@ const Header = (params) => {
         <div className={`${params.dark? 'dark' : null} z-10 landscape:pb-4`}>
             {fullSize? (
                 <header className="flex justify-between items-center mx-8 pt-6 font-montserrat">
-                    <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
+                    <Link href="/"><button><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></button></Link>
                     <div className="flex space-x-12 sm:text-sm">
-                        <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Home' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Home</p></div></Link>
+                        <Link href="/"><button className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Home' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Home</p></button></Link>
                         <div className="flex flex-col">
-                            <Link href="/projects"><div onMouseEnter={() => {InterruptDissapear(); Show(["cocktailmaker", "vitalcities", "portfolio"])}} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Projects' || params.active === "Vitalcities" || params.active === "Portfolio" || params.active === "Cocktailmaker" ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Projects</p></div></Link>
-                            <div id="cocktailmaker" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-7"><Link href="/cocktailmaker"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Cocktailmaker' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Cocktailmaker</p></div></Link></div>
-                            <div id="vitalcities" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-14"><Link href="/vitalcitiesbeweegscan"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Vitalcities' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Vital Cities Beweegscan</p></div></Link></div>
-                            <div id="portfolio" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-[84px]"><Link href="/portfolio"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Portfolio' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Portfolio</p></div></Link></div>
+                            <Link href="/projects"><button onMouseEnter={() => {InterruptDissapear(); Show(["cocktailmaker", "vitalcities", "portfolio"])}} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Projects' || params.active === "Vitalcities" || params.active === "Portfolio" || params.active === "Cocktailmaker" ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Projects</p></button></Link>
+                            <div id="cocktailmaker" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-7"><Link href="/cocktailmaker"><button className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Cocktailmaker' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Cocktailmaker</p></button></Link></div>
+                            <div id="vitalcities" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-14"><Link href="/vitalcitiesbeweegscan"><button className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Vitalcities' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Vital Cities Beweegscan</p></button></Link></div>
+                            <div id="portfolio" onMouseEnter={() => InterruptDissapear()} onMouseLeave={() => Dissapear(["cocktailmaker", "vitalcities", "portfolio"])} className="hidden transition-opacity ease-in text-opacity-0 absolute mt-[84px]"><Link href="/portfolio"><button className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Portfolio' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green': null} hover:border-b-2 hover:-mb-1`}>Portfolio</p></button></Link></div>
                         </div>
-                        <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'About' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>About</p></div></Link>
-                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a>
+                        <Link href="/about"><button className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'About' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>About</p></button></Link>
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black" /></div></a>
                     </div>
                     <div className="flex space-x-4 items-center">
-                        <Sun className="cursor-pointer dark:text-lightblue text-green" onClick={async() => {changeTheme()}}/>
+                        <button><Sun className="cursor-pointer dark:text-lightblue text-green" onClick={async() => {changeTheme()}} onKeyPress={(event: any) => {if(event.key === 'Enter'){changeTheme()}}}/></button>
                         <Link href="/contact"><button className="dark:bg-darkgray dark:text-white bg-lightgray text-black p-2 rounded">Contact</button></Link>
                     </div>
                 </header>
             ) : (
-                <header className={`flex items-center mx-8 pt-6 font-montserrat ${showSideNav? 'justify-end' : 'justify-between'}`}>
-                    <Menu className={`dark:text-white text-black ${showSideNav? 'hidden' : ''}`} onClick={() => handleSideBar()}/>
-                    <div className={`fixed top-0 left-0 ${showSideNav? '' : 'hidden'} ${params.dark? 'bg-darkgray' : 'bg-lightgray'} h-screen w-2/5 z-10`}>
-                        <div className="h-screen flex flex-col justify-between py-6">
-                            <div>
-                                <div className="flex justify-between items-center mx-4 md:mx-8">
-                                    <X className="dark:text-white text-black h-6 w-6" onClick={() => handleSideBar()}/>
-                                    <Sun className="cursor-pointer dark:text-lightblue text-green h-6 w-6" onClick={async() => {changeTheme()}}/>
+                <div>
+                    <header className={`flex items-center mx-8 pt-6 font-montserrat ${showSideNav? 'justify-end' : 'justify-between'}`}>
+                        <Menu className={`dark:text-white text-black ${showSideNav? 'hidden' : ''}`} onClick={() => handleSideBar()}/>
+                        <div className={`fixed top-0 left-0 ${showSideNav? '' : 'hidden'} ${params.dark? 'bg-darkgray' : 'bg-lightgray'} h-screen w-2/5 z-20`}>
+                            <div className="h-screen flex flex-col justify-between py-6">
+                                <div>
+                                    <div className="flex justify-between items-center mx-4 md:mx-8">
+                                        <X className="dark:text-white text-black h-6 w-6" onClick={() => handleSideBar()}/>
+                                        <Sun className="cursor-pointer dark:text-lightblue text-green h-6 w-6" onClick={async() => {changeTheme()}}/>
+                                    </div>
+                                    <div className="flex justify-between mx-4 mt-3 md:mx-8 md:mt-6 items-center">
+                                        <h3 className="dark:text-lightblue text-green text-lg md:text-xl">Dashboard</h3>
+                                    </div>
+                                    <section className="mt-4 mx-4 md:mt-8 md:mx-8 space-y-4">
+                                        <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Home' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Home</p></div></Link>
+                                        <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Projects' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Projects</p></div></Link>
+                                        <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'About' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>About</p></div></Link>
+                                        <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a></p>
+                                        <Link href="/contact"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Contact' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Contact</p></div></Link>
+                                    </section>
                                 </div>
-                                <div className="flex justify-between mx-4 mt-3 md:mx-8 md:mt-6 items-center">
-                                    <h3 className="dark:text-lightblue text-green text-lg md:text-xl">Dashboard</h3>
-                                </div>
-                                <section className="mt-4 mx-4 md:mt-8 md:mx-8 space-y-4">
-                                    <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Home' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Home</p></div></Link>
-                                    <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Projects' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Projects</p></div></Link>
-                                    <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'About' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>About</p></div></Link>
-                                    <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a></p>
-                                    <Link href="/contact"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Contact' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Contact</p></div></Link>
-                                </section>
                             </div>
                         </div>
-                    </div>
-                    <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
-                </header>
+                        <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
+                    </header>
+                    <div className={`${showSideNav? null : 'hidden' } fixed top-0 bottom-0 left:0 right:0 h-screen w-screen z-10 bg-darkgray opacity-40 pl-20`} onClick={() => handleSideBar()}></div>
+                </div>
             )}
         </div>
     )
