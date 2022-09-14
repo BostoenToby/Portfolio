@@ -24,30 +24,32 @@ export default function Home() {
     <div className={`${dark? 'dark': null}`}>
       <div className="h-screen overflow-x-hidden overflow-y-hidden z-0 dark:bg-black bg-white">
         <Header setDark={setDark} dark={dark} active="Home"/>
-        <main className="font-montserrat pt-0 mx-8 space-y-4 h-screen pb-16">
-          <section className="smH:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none h-full grid justify-center">
-            <div className="md:col-start-1 md:px-4 text-center landscape:py-12 portrait:py-40 md:py-40 my-auto">
-              <div className="xsmH:mb-2 mb-0">
-                <h1 className="dark:text-lightblue text-green text-3xl md:text-5xl pb-4">Toby Bostoen</h1>
-                <h2 className="dark:text-white text-black text-xl md:text-3xl leading-normal">Full-stack Web Developer<br />Based in Belgium</h2>
+        <main className="font-montserrat pt-0 mx-8 space-y-4 pb-16 h-full grid items-center grid-cols-none grid-rows-none">
+          <section className="flex w-full mx-auto items-center justify-center xxsm:grid xxsm:grid-cols-none xxsm:grid-rows-5 phoneS20:grid-rows-5 landscape:grid-cols-2 landscape:grid-rows-none ipadMini:grid-rows-5 ipadMini:grid-cols-none next:grid-cols-2 next:grid-rows-none max-w-[1100px]">
+            
+            <div className="xxsm:row-start-3 xxsm:row-end-6 xxsm:pb-4 phoneS20:row-start-3 phoneS20:row-end-6 ipadMini:row-start-3 ipadMini:row-end-6 next:col-start-1 next:row-start-1 text-center h-full flex flex-col items-center justify-center ipadMini:pb-20 surface:pb-40 landscape:col-start-1 landscape:row-start-1">
+              <div className="mb-0 surface:pb-8">
+                <h1 className="dark:text-lightblue text-green text-5xl phoneS20:text-2xl ipadMini:text-4xl surface:text-5xl pb-4 landscape:text-xl landscape:ipadMiniLand:text-4xl landscape:next:text-4xl">Toby Bostoen</h1>
+                <h2 className="dark:text-white text-black text-xl phoneS20:text-xl md:text-3xl ipadMini:text-3xl surface:text-4xl leading-normal landscape:text-lg landscape:ipadMiniLand:text-3xl landscape:next:text-3xl">Full-stack Web Developer<br />Based in Belgium</h2>
               </div>
-              <div className="lg:pt-12 dark:text-white text-black grid grid-rows-3 grid-cols-4 landscape:lg:grid-rows-3 landscape:lg:grid-cols-4 portrait:lg:grid-rows-4 portrait:lg:grid-cols-3 gap-x-4 items-end space-y-4">
+              <div className="dark:text-white text-black grid grid-rows-4 grid-cols-3 ipadMini:grid-rows-3 ipadMini:grid-cols-4 surfaceDuo:grid-rows-3 surfaceDuo:grid-cols-4 next:grid-rows-3 next:grid-cols-4 gap-x-4 items-end space-y-4">
                 {languages.map((lang, index) => {
                   return(
-                    <div className="p-2 dark:bg-darkgray bg-lightgray rounded">
+                    <div className="p-2 phoneS20:p-1 ipadMini:p-3 landscape:p-1 landscape:ipadMiniLand:p-3 landscape:next:p-2 dark:bg-darkgray bg-lightgray rounded">
                       {lang == 'C#'? (
-                        <i className="devicon-csharp-plain text-xl lg:text-3xl dark:text-lightblue text-green"></i>
+                        <i className="devicon-csharp-plain text-xl ipadMini:text-3xl surface:text-4xl landscape:hidden landscape:ipadMiniLand:block landscape:ipadMiniLand:text-3xl landscape:next:text-2xl landscape:next:block dark:text-lightblue text-green"></i>
                       ): (
-                        <i className={`devicon-${lang.toLocaleLowerCase()}-plain text-xl lg:text-3xl dark:text-lightblue text-green`}></i>
+                        <i className={`devicon-${lang.toLocaleLowerCase()}-plain text-xl ipadMini:text-3xl surface:text-4xl landscape:hidden landscape:ipadMiniLand:block landscape:ipadMiniLand:text-3xl landscape:next:text-2xl landscape:next:block dark:text-lightblue text-green`}></i>
                       )}
-                      <p key={index} className="dark:text-white text-black text-base landscape:text-sm landscape:md:text-sm landscape:lg:text-sm landscape:xl:text-lg md:text-xl lg:text-3xl`">{lang}</p>
+                      <p key={index} className="dark:text-white text-black text-sm phoneS20:text-sm ipadMini:text-xl surface:text-2xl landscape:text-xs landscape:ipadMiniLand:text-base landscape:next:text-base">{lang}</p>
                     </div>
                   )
                 })}
               </div>
             </div>
-            <div className="h-full grid grid-cols-1 items-center justify-center">
-              <div className="hidden lg:block md:items-center md:relative col-start-1 row-start-1 md:col-start-1 md:mx-auto w-[50%] landscape:mt-0 xsmH:w-[80%] smH:w-[70%] lg:w-[80%] 2xl:w-[70%]">
+
+            <div className="xxsm:row-start-1 xxsm:row-end-3 ipadMini:row-start-1 ipadMini:row-end-3 next:col-start-2 next:row-start-1 grid items-center justify-center grid-cols-none grid-rows-none h-full surfaceDuo:pb-4 landscape:col-start-2 landscape:row-start-1">
+              <div className="hidden xxsm:block w-60 h-60 md:items-center relative phoneS20:w-80 phoneS20:h-80 ipadMini:w-[380px] ipadMini:h-[380px] ipadMini:pt-4 ipadAir:w-[600px] ipadAir:h-[600px] surface:w-[600px] surface:h-[600px] next:h-[400px] next:w-[400px] landscape:next:w-[450px] landscape:next:h-[450px]">
                 <Image src={personalimage} alt="an image of the creator of the site" layout="responsive" placeholder="blur" className="rounded" />
               </div>
             </div>

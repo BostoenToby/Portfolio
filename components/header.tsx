@@ -68,7 +68,7 @@ const Header = (params) => {
     }
 
     return(
-        <div className={`${params.dark? 'dark' : null} z-10`}>
+        <div className={`${params.dark? 'dark' : null} z-10 landscape:pb-4`}>
             {fullSize? (
                 <header className="flex justify-between items-center mx-8 pt-6 font-montserrat">
                     <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
