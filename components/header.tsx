@@ -13,6 +13,22 @@ const Header = (params) => {
     let dissapearTimeout
 
     useEffect(() => {
+        if(getStorage("dark") != undefined || getStorage("dark") != null){
+            params.setDark(getStorage("dark") === 'true' ? true : false)
+            console.log(getStorage("dark") === 'true' ? true : false)
+        } else {
+            params.setDark(false)
+            setStorage("dark", false)
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode from OS
+                params.setDark(true)
+                setStorage("dark", true)
+            }
+            else {
+                params.setDark(false)
+                setStorage("dark", false)
+            }
+        }
         if(typeof window !== "undefined"){
             const updateSize = () => {
                 if(window.innerWidth >= 768){
