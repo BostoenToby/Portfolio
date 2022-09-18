@@ -1,9 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
-
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self';
@@ -51,5 +45,7 @@ module.exports = {
         headers: securityHeaders,
       }
     ]
-  }
+  },
+  reactStrictMode: true,
+  swcMinify: true,
 }
