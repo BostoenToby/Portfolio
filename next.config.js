@@ -41,7 +41,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/.*?",
+        source: '/:path*{/}?',
         headers: securityHeaders,
       }
     ]
