@@ -4,10 +4,18 @@ const nextConfig = {
   swcMinify: true,
 }
 
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self';
+  font-src 'self' 'https://fonts.googleapis.com';
+  img-src 'self';
+  frame-ancestors 'none'
+`
+
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; font-src 'self' 'https://fonts.googleapis.com'; img-src 'self'; script-src 'self'; frame-ancestors 'none'"
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
   },
   {
     key: 'X-Frame-Options',
@@ -23,7 +31,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value: "camera=(); battery=(); geolocation=(); microphone=()"
+    value: 'camera=(), battery=(), geolocation=(), microphone=(), browsing-topics=()'
   },
   {
     key: 'X-XSS-Protection',
