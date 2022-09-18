@@ -7,7 +7,7 @@ const nextConfig = {
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
-    value: "default-src 'self'; font-src 'self' 'https://fonts.googleapis.com'; img-src 'self'; script-src 'self'"
+    value: "default-src 'self'; font-src 'self' 'https://fonts.googleapis.com'; img-src 'self'; script-src 'self'; frame-ancestors 'none'"
   },
   {
     key: 'X-Frame-Options',
