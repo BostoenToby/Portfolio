@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/header"
 import Image from "../node_modules/next/image"
 import vitalcities from '../public/vitalcities.png';
@@ -6,9 +6,24 @@ import netlify from '../public/netlifycms.jpg'
 
 export default function Beweegscan () {
     const [dark, setDark] = useState<boolean>()
+    const [height, setHeight] = useState<boolean>(false)
+
+    useEffect(() => {
+        const updateSize = () => {
+            const contentHeight = document.getElementsByTagName("body")[0].clientHeight
+            const contentRelativeHeight = contentHeight / window.innerHeight
+            if(contentRelativeHeight <= 1){
+                setHeight(true)
+            } else {
+                setHeight(false)
+            }
+        }
+        updateSize()
+        window.addEventListener("resize", updateSize)
+    }, [])
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'}`}>
+        <div className={`${height? 'h-screen' : 'h-full'} ${dark? 'bg-black': 'bg-white'}`}>
             <Header setDark={setDark} dark={dark} active="Vitalcities"/>
             <main className="font-montserrat mt-16 mx-8 pb-8">
                 <div className="grid landscape:grid-cols-3 landscape:grid-rows-none grid-cols-none grid-rows-2 ipadMini:grid-cols-3 ipadMini:grid-rows-none items-center justify-center mb-8">

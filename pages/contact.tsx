@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/header";
 import FormError from "../interfaces/formError";
 import MailInfo from "../interfaces/mailInfo";
@@ -21,6 +21,22 @@ export default function Contact () {
     })
     const [sent, setSent] = useState<boolean>(false)
     const [delivered, setDelivered] = useState<boolean>(false)
+
+    const [height, setHeight] = useState<boolean>(false)
+
+    useEffect(() => {
+        const updateSize = () => {
+            const contentHeight = document.getElementsByTagName("body")[0].clientHeight
+            const contentRelativeHeight = contentHeight / window.innerHeight
+            if(contentRelativeHeight <= 1){
+                setHeight(true)
+            } else {
+                setHeight(false)
+            }
+        }
+        updateSize()
+        window.addEventListener("resize", updateSize)
+    }, [])
 
     async function sendgridMail(mail: MailInfo, array: string[]) {
         try {
@@ -103,7 +119,7 @@ export default function Contact () {
     }
 
     return(
-        <div className={`${dark? 'dark' : null}`}>
+        <div className={`${height? 'h-screen' : 'h-full'} ${dark? 'dark' : null}`}>
           <div className="portrait:h-screen landscape:h-full landscape:pb-60 dark:bg-black bg-white">
               <Header setDark={setDark} dark={dark} active="Contact"/>
               <main className="font-montserrat mx-8 h-[calc(100vh-80px)] grid grid-cols-none grid-rows-none items-center justify-center">

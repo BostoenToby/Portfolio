@@ -4,7 +4,6 @@ import { Sun, Menu, X } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "../node_modules/next/link"
 import { getStorage, setStorage } from "./localstorage"
-import fileDownload from 'js-file-download'
 
 const Header = (params) => {
     const [fullSize, setFullSize] = useState<boolean>(true)
@@ -15,7 +14,6 @@ const Header = (params) => {
     useEffect(() => {
         if(getStorage("dark") != undefined || getStorage("dark") != null){
             params.setDark(getStorage("dark") === 'true' ? true : false)
-            console.log(getStorage("dark") === 'true' ? true : false)
         } else {
             params.setDark(false)
             setStorage("dark", false)
@@ -109,7 +107,7 @@ const Header = (params) => {
                                         <Link href="/"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Home' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Home</p></div></Link>
                                         <Link href="/projects"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Projects' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Projects</p></div></Link>
                                         <Link href="/about"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'About' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>About</p></div></Link>
-                                        <p className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a></p>
+                                        <div className="w-max"><a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black"/></div></a></div>
                                         <Link href="/contact"><div className="text-base dark:text-white text-black cursor-pointer"><p className={`hover:dark:border-white hover:border-black ${params.active === 'Contact' ? 'dark:text-lightblue text-darkgreen hover:dark:!border-lightblue hover:!border-green' : null} hover:border-b-2 hover:-mb-1`}>Contact</p></div></Link>
                                     </section>
                                 </div>

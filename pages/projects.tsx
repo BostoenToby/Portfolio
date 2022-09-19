@@ -7,6 +7,21 @@ import Blockproject from "../components/blockproject"
 
 export default function Projects () {
     const [dark, setDark] = useState<boolean>()
+    const [height, setHeight] = useState<boolean>(false)
+
+    useEffect(() => {
+        const updateSize = () => {
+            const contentHeight = document.getElementsByTagName("body")[0].clientHeight
+            const contentRelativeHeight = contentHeight / window.innerHeight
+            if(contentRelativeHeight <= 1){
+                setHeight(true)
+            } else {
+                setHeight(false)
+            }
+        }
+        updateSize()
+        window.addEventListener("resize", updateSize)
+    }, [])
 
     const projects = [{
         title: "Cocktail Maker",
@@ -31,7 +46,7 @@ export default function Projects () {
     }]
 
     return(
-        <div className={`h-full ${dark? 'bg-black': 'bg-white'} ml-[100vw - 100%]`}>
+        <div className={`${height? 'h-screen' : 'h-full'} ${dark? 'bg-black': 'bg-white'} ml-[100vw - 100%]`}>
             <Header setDark={setDark} dark={dark} active="Projects"/>
             <main className="font-montserrat mt-4 mx-8 pb-8">
                 <h1 className={`${dark? 'text-lightblue' : 'text-green'} text-5xl mb-8`}>Projects</h1>               

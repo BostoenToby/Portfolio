@@ -1,5 +1,5 @@
 import Image from "../node_modules/next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import business from '../public/business.jpeg';
 import personalprogrammer from '../public/computergray.jpg';
 import computer from '../public/computergray.jpg';
@@ -8,9 +8,24 @@ import Header from "../components/header";
 
 export default function About () {
     const [dark, setDark] = useState<boolean>()
+    const [height, setHeight] = useState<boolean>(false)
+
+    useEffect(() => {
+        const updateSize = () => {
+            const contentHeight = document.getElementsByTagName("body")[0].clientHeight
+            const contentRelativeHeight = contentHeight / window.innerHeight
+            if(contentRelativeHeight <= 1){
+                setHeight(true)
+            } else {
+                setHeight(false)
+            }
+        }
+        updateSize()
+        window.addEventListener("resize", updateSize)
+    }, [])
 
     return(
-        <div className={`${dark? 'dark' : null} scrollbar`}>
+        <div className={`${height? 'h-screen' : 'h-full'} ${dark? 'dark' : null} scrollbar`}>
             <div className="h-full  dark:bg-black bg-white">
                 <Header setDark={setDark} dark={dark} active="About" />
                 <main className="font-montserrat mx-8 pt-8 md:pt-2 landscape:mt-12 max-w-[1200px] xl:mx-auto">

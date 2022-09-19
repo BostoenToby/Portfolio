@@ -1,11 +1,27 @@
 import Image from '../node_modules/next/image'
 import personalimage from '../public/personalimage.jpg';
 import Header from '../components/header'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home({darkParam} : {darkParam: boolean}) {
   const [dark, setDark] = useState<boolean>(darkParam)
   
+  const [height, setHeight] = useState<boolean>(false)
+
+  useEffect(() => {
+      const updateSize = () => {
+          const contentHeight = document.getElementsByTagName("body")[0].clientHeight
+          const contentRelativeHeight = contentHeight / window.innerHeight
+          if(contentRelativeHeight <= 1){
+              setHeight(true)
+          } else {
+              setHeight(false)
+          }
+      }
+      updateSize()
+      window.addEventListener("resize", updateSize)
+  }, [])
+
   const languages = [
     "Javascript",
     "Typescript",
@@ -21,7 +37,7 @@ export default function Home({darkParam} : {darkParam: boolean}) {
   ]
 
   return (
-    <div className={`${dark? 'dark': null}`}>
+    <div className={`${height? 'h-screen' : 'h-full'} ${dark? 'dark': null}`}>
       <div className="h-screen overflow-x-hidden overflow-y-hidden z-0 dark:bg-black bg-white">
         <Header setDark={setDark} dark={dark} active="Home"/>
         <main className="font-montserrat pt-0 mx-8 space-y-4 pb-16 h-[calc(100vh-80px)] grid items-center grid-cols-none grid-rows-none">
