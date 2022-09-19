@@ -2,7 +2,6 @@ import Image from "../node_modules/next/image";
 import { useEffect, useState } from "react";
 import business from '../public/business.jpeg';
 import personalprogrammer from '../public/computergray.jpg';
-import computer from '../public/computergray.jpg';
 import zen from '../public/zen.jpg';
 import Header from "../components/header";
 

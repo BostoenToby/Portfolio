@@ -1,6 +1,5 @@
 //@ts-ignore
-import { Download } from "lucide-react"
-import { Sun, Menu, X } from "lucide-react"
+import { Sun, Menu, X, Download } from "lucide-react"
 import { useEffect, useState } from "react"
 import Link from "../node_modules/next/link"
 import { getStorage, setStorage } from "./localstorage"
