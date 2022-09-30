@@ -127,7 +127,7 @@ export default function Contact () {
 
                     <section className="row-start-1 row-end-3 col-start-1 lg:col-start-1 lg:row-start-1 lg:row-end-1">
                         <h1 className="dark:text-lightblue text-green text-3xl md:text-5xl mb-4 landscape:text-3xl landscape:lg:text-5xl lg:px-0">Don't hessitate, go ahead<br />and contact me</h1>
-                        <p className="text-base dark:text-white text-black lg:px-0">Send me directly <span className="font-bold text-green cursor-pointer"><a href="mailto:toby.botport@gmail.com">here</a></span> or use the form on the right</p>
+                        <p className="text-base dark:text-white text-black lg:px-0">Send me directly <span className="font-bold text-darkgreen cursor-pointer"><a href="mailto:toby.botport@gmail.com">here</a></span> or use the form on the right</p>
                     </section>
 
                     <section className="row-start-3 row-end-6 col-start-1 lg:col-start-2 lg:row-start-1 lg:row-end-1 flex flex-col space-y-4 portrait:w-[calc(100vw-64px)] ">
@@ -181,9 +181,9 @@ export default function Contact () {
                             <p className="dark:text-darkred text-lightred">{errors.messageError}</p>
                           ) : null}
                         </div>
-                        <button className="px-4 py-2 md:py-6 md:px-16 text-white bg-green rounded border-2 border-transparent hover:border-lightblue focus:border-lightblue" onClick={async() => {setSent(true); await checkInfo()}}>Send message</button>
+                        <button className="px-4 py-2 md:py-6 md:px-16 text-normalWhite bg-green rounded border-2 border-transparent hover:border-lightblue focus:border-lightblue" onClick={async() => {setSent(true); await checkInfo()}} name="Send message">Send message</button>
                         {sent == true && delivered == true && (
-                          <p className="dark:text-lightblue text-green mx-auto !mt-2">Message delivered!</p>
+                          <p className="dark:text-lightblue text-darkgreen mx-auto !mt-2">Message delivered!</p>
                         )}
                         {sent == true && delivered == false && (
                           <p className="dark:text-darkred text-lightred mx-auto !mt-2">Message failed</p>

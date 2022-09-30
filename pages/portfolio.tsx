@@ -29,9 +29,9 @@ export default function Portfolio () {
                     <div className="landscape:col-start-1 landscape:col-end-3 landscape:row-start-1 landscape:row-end-1 row-start-1 row-end-2 ipadMini:col-start-1 ipadMini:col-end-3 w-full sm:w-3/4 md:w-full">
                         <h1 className={`${dark? 'text-lightblue' : 'text-green'} landscape:text-4xl text-3xl mb-8`}>Portfolio</h1>
                         <div className="grid grid-cols-2 grid-rows-3 lg:flex gap-4">
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#2021-2022</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#frontend</h4>
-                            <h4 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#data storage</h4>
+                            <h2 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#2021-2022</h2>
+                            <h2 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#frontend</h2>
+                            <h2 className={`${dark? 'text-white bg-darkgray' : 'text-black bg-lightgray'} py-2 px-4 rounded w-max`}>#data storage</h2>
                         </div>
                     </div>
                     <div className="block landscape:col-start-3 landscape:col-end-4 landscape:row-start-1 landscape:row-end-1 row-start-2 row-end-3 ipadMini:row-start-1 ipadMini:row-end-1 ipadMini:col-start-3 ipadMini:col-end-4 relative w-60 ipadMini:w-60 landscape:ipadMiniLand:w-64 next:w-80 landscape:mt-8 pr-8">

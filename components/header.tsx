@@ -84,7 +84,7 @@ const Header = (params) => {
                         <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"><div className="flex space-x-1"><p className="hover:dark:border-white hover:border-black text-base dark:text-white text-black">CV</p><Download strokeWidth="1" className="dark:text-white text-black" /></div></a>
                     </div>
                     <div className="flex space-x-4 items-center">
-                        <button><Sun className="cursor-pointer dark:text-lightblue text-green" onClick={async() => {changeTheme()}} onKeyPress={(event: any) => {if(event.key === 'Enter'){changeTheme()}}}/></button>
+                        <button name="change theme"><Sun className="cursor-pointer dark:text-lightblue text-green" onClick={async() => {changeTheme()}} onKeyPress={(event: any) => {if(event.key === 'Enter'){changeTheme()}}}/></button>
                         <Link href="/contact"><button className="dark:bg-darkgray dark:text-white bg-lightgray text-black hover:dark:bg-lightblue hover:text-white hover:bg-green p-2 rounded">Contact</button></Link>
                     </div>
                 </header>
@@ -112,7 +112,7 @@ const Header = (params) => {
                                 </div>
                             </div>
                         </div>
-                        <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-green border-green border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
+                        <Link href="/"><h1 className="cursor-pointer dark:text-lightblue dark:border-lightblue text-darkgreen border-darkgreen border-b-2 font-montserrat h-7 sm:text-sm">Bostoen Toby</h1></Link>
                     </header>
                     <div className={`${showSideNav? null : 'hidden' } fixed top-0 bottom-0 left:0 right:0 h-screen w-screen z-10 bg-darkgray opacity-40 pl-20`} onClick={() => handleSideBar()}></div>
                 </div>

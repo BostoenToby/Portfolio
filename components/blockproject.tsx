@@ -7,8 +7,8 @@ const Blockproject = ({dark, image, title, explanation, altImage} : {dark: boole
             <div className="landscape:col-start-1 landscape:col-end-3 landscape:row-start-1 landscape:row-end-2 ipadMini:row-start-1 ipadMini:row-end-2 row-start-1 row-end-3 grid grid-rows-1 pb-4">
                 <div>
                     <div className="flex justify-between items-center pb-2">
-                        <h3 className={`${dark? 'text-lightblue' : 'text-green'} text-xl md:text-3xl w-1/2`}>{title}</h3>
-                        <div className="!ml-0"><Link href={`${title.replace(/\s/g, '').toLowerCase()}`}><button className={`${dark? 'text-lightblue' : 'text-green'} text-lg ${dark? 'bg-darkgray': 'bg-lightgray'} p-2 rounded hover:dark:bg-lightblue hover:bg-green hover:text-white`}>Read more</button></Link></div>
+                        <h2 className={`${dark? 'text-lightblue' : 'text-green'} text-xl md:text-3xl w-1/2`}>{title}</h2>
+                        <div className="!ml-0"><Link href={`${title.replace(/\s/g, '').toLowerCase()}`}><button className={`${dark? 'text-lightblue bg-darkgray hover:bg-lightblue' : 'text-darkgreen bg-lightgray hover:bg-green'} text-lg p-2 rounded hover:text-white`}>Read more</button></Link></div>
                     </div>
                     <p className={`${dark? 'text-white' : 'text-black'} text-lg`}>{explanation}</p>
                 </div>
