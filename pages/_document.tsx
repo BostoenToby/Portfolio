@@ -1,7 +1,5 @@
 //@ts-ignore
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { useEffect, useState } from 'react'
-import { getStorage, setStorage } from '../components/localstorage'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

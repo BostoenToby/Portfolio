@@ -57,7 +57,7 @@ export default function Home({darkParam} : {darkParam: boolean}) {
                       ): (
                         <i className={`devicon-${lang.toLocaleLowerCase()}-plain text-xl ipadMini:text-3xl surface:text-4xl landscape:hidden landscape:ipadMiniLand:block landscape:ipadMiniLand:text-3xl landscape:next:text-2xl landscape:next:block dark:text-lightblue text-green`}></i>
                       )}
-                      <p className="dark:text-white text-black text-sm phoneS20:text-sm ipadMini:text-xl surface:text-2xl landscape:text-xs landscape:ipadMiniLand:text-base landscape:next:text-base">{lang}</p>
+                      <span className="dark:text-white text-black text-sm phoneS20:text-sm ipadMini:text-xl surface:text-2xl landscape:text-xs landscape:ipadMiniLand:text-base landscape:next:text-base">{lang}</span>
                     </div>
                   )
                 })}
